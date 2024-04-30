@@ -1,0 +1,98 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="index.js"></script>
+    <title>CineMacth</title>
+  </head>
+  <body>
+    <div class="background">
+      <div class="circle1"></div>
+      <div class="circle2"></div>
+    </div>
+    <div class="login-container">
+      <div class="fifth-rectangle"></div>
+      <div class="fourth-rectangle"></div>
+      <div class="third-rectangle"></div>
+      <!-- login -->
+      <div class="login">
+        <h1>Bentornato</h1>
+        <h4 class="no-error" id="loginMessage">Invalid username or password</h4>
+        <form
+          action="php/login.php"
+          method="post"
+          name="login"
+          autocomplete="off"
+          id="loginForm">
+          <div class="relative-input">
+            <input class="input" type="text" name="username" maxlength="30" />
+            <label for="username">
+              <span class="placeholder" id="login-username-text">Username</span>
+            </label>
+          </div>
+          <div class="relative-input">
+            <input
+              class="input"
+              type="password"
+              maxlength="30"
+              name="password" />
+            <label for="password">
+              <span class="placeholder" id="login-password-text">Password</span>
+            </label>
+          </div>
+          <input type="submit" value="Login" class="switchButton" />
+        </form>
+      </div>
+
+      <!-- signup -->
+      <div class="signup">
+        <h1>Benvenuto</h1>
+        <h4 class="no-error" id="signupMessage">
+          Inserire un username ed una password di minimo 8 caratteri
+        </h4>
+        <form
+          action="php/signup.php"
+          method="post"
+          name="signup"
+          autocomplete="off"
+          id="signupForm">
+          <div class="relative-input">
+            <input class="input" type="text" name="username" maxlength="30" />
+            <label for="username">
+              <span class="placeholder" id="signup-username-text"
+                >Username</span
+              >
+            </label>
+          </div>
+          <div class="relative-input">
+            <input
+              class="input"
+              type="password"
+              maxlength="30"
+              name="password" />
+            <label for="password">
+              <span class="placeholder" id="signup-password-text"
+                >Password</span
+              >
+            </label>
+          </div>
+          <input type="submit" value="signup" />
+        </form>
+      </div>
+
+      <!-- immagine -->
+      <div class="login-image" id="loginPage">
+        <img src="./assets/movies.png" alt="movie" class="imgMovie" />
+        <div class="text-container">
+          <h2 class="film-text">TROVA IL FILM GIUSTO PER LA TUA SERATA</h2>
+          <button class="signup-button" id="switchButton">
+            <h2 class="signup-text">Signup</h2>
+          </button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
