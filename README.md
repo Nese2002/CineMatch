@@ -1,2 +1,0 @@
-# CineMatch
-Progetto LTW
