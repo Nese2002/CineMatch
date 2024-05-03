@@ -4,8 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="https://unpkg.com/topojson@3"></script>
     <script type="module" src="index.js"></script>
     <script type="module" src="inputNumber.js"></script>
+    <script src="map.js"></script>
     <script
       src="https://kit.fontawesome.com/7b5b8543ec.js"
       crossorigin="anonymous"></script>
@@ -165,14 +168,55 @@
         </form>
       </div>
     </section>
+
+    <!-- PAESE -->
     <section class="hidden-section" id="sectionPaese">
-      <div class="center">
+      <div class="end">
         <div class="">
           <h2>Da quale paese proviene il film?</h2>
           <div class="underline"></div>
         </div>
+        <div class="search-bar">
+          <i class="fa-solid fa-search"></i>
+          <input
+            autocomplete="off"
+            type=""
+            name="search"
+            id="mapSearch"
+            placeholder="Cerca un paese" />
+        </div>
+        <div class="">
+          <form
+          action=""
+          method="post"
+          name="paese"
+          autocomplete="off"
+          class=""
+          id="paese">
+          <div class="select-paese">
+            <div id="zonaPaese" class="gridPaese"></div>
+            
+            <svg id="map"></svg>
+          </div>
+          <div class="submit-button">
+            <div class="submit-relative">
+              <button
+                type="submit"
+                disabled="true"
+                class="submit checkbox"
+                id="submitPaese">
+                <i class="fa-solid fa-check"></i>
+              </button>
+              <div class="shadow-1"></div>
+              <div class="shadow-2"></div>
+            </div>
+          </div>
+        </form>
+        </div>
       </div>
     </section>
+
+    <!-- CAST -->
     <section class="hidden-section" id="sectionCast">
       <div class="center">
         <div class="">

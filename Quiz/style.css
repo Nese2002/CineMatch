@@ -53,6 +53,50 @@ h2 {
   white-space: nowrap;
 }
 
+
+svg { 
+  margin-top: 2rem;
+  mask:linear-gradient(90deg, transparent , white 10%, white 90%, transparent );
+
+}
+
+select {
+  background-color: #041506;
+  border: none;
+  color: white; margin-top: 2rem;
+  font-size: 1.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 15px;
+  width: 50vw;
+  transition: all 0.3s ease;
+  overflow-y: auto;
+}
+
+select option:checked {
+  background-color: #ff0000; /* Change this to the color you want */
+}
+
+/* This will change the scrollbar track */
+select::-webkit-scrollbar {
+  width: 10px;
+}
+
+select::-webkit-scrollbar-track {
+  background: #041506;
+  border-radius: 10px;
+}
+
+/* This will change the scrollbar handle */
+select::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+}
+
+/* Change the scrollbar handle on hover */
+select::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
 /* --------------------------------
 
 Component 
@@ -94,6 +138,17 @@ Component
   align-items: center;
 }
 
+.end {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  padding-bottom: 1rem;
+  align-items: center;
+}
+
+
 .grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -129,10 +184,12 @@ Component
   background-color: #041506;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
+
+
 .submit-button {
   display: flex;
   justify-content: center;
-  margin-top: 3rem;
+  margin-top: 1rem; /*3rem*/
 }
 .submit-relative {
   position: relative;
@@ -218,6 +275,10 @@ Component
   pointer-events: none;
 }
 
+
+
+
+
 .search-bar {
   margin-top: 1rem;
   background-color: rgba(255, 255, 255, 0.155);
@@ -229,6 +290,7 @@ Component
 .search-bar input {
   background-color: transparent;
   border: none;
+   color: white;
   padding-left: 1rem;
 }
 
@@ -266,6 +328,37 @@ Component
 .gridGenere::-webkit-scrollbar-thumb {
   background: #ffffff; /* Color of the scroll thumb */
 }
+
+.select-paese{
+  display: flex;
+
+  
+}
+
+.gridPaese {
+  margin-top: 1rem;
+  margin-right: 0.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 0.3rem;
+  align-items: start;
+  height: 55.5vh;
+  overflow-y: scroll;
+}
+
+.gridPaese::-webkit-scrollbar {
+  width: 5px;
+}
+
+.gridPaese::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.gridPaese::-webkit-scrollbar-thumb {
+  background: #ffffff; /* Color of the scroll thumb */
+}
+
 
 .annoForm {
   width: 100%;
@@ -308,4 +401,35 @@ input[type="number"]:focus {
   transition: all 0.3s ease;
   background-color: #075711;
   outline: none;
+}
+
+
+.checkbox-container input[type="checkbox"]:hover + .map-text {
+  background-color: #05370b;
+  box-shadow: 0 4px 8px 0 rgba(0, 255, 17, 0.3),
+    0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  color: white;
+}
+
+.checkbox-container input[type="checkbox"]:checked + .map-text {
+  background-color: #066e12;
+  box-shadow: 0 4px 8px 0 rgba(0, 255, 17, 0.3),
+    0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  color: white;
+}
+.map-text{
+    font-size: clamp(0.5rem, 1rem, 1.5rem);
+  width: fit-content;
+  color: #9999a2;
+  pointer-events: none;
+}
+
+.checkbox-container input[type="checkbox"] + .map-text {
+  position: relative;
+  margin-top: 0.2rem;
+  border-radius: 10px;
+  width: 100%;
+  padding: 0.5rem 1rem;
+  background-color: #041506;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }

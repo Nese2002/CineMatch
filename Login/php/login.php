@@ -30,45 +30,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $row = $result->fetch_assoc();
     $hashed_password = $row["password"];
     if (password_verify($password, $hashed_password)) {
-      // Password corretta, login effettuato con successo
-      // Reindirizzamento alla pagina quiz.html
-      header("Location: ../../Quiz/index.html");
-      exit(); // Assicura che il codice successivo non venga eseguito dopo il reindirizzamento
+      echo "success";
     } else {
       // Password non corretta
-      $error_message = "Password non valida";
+      echo 'password-error';
     }
   } else {
     // Utente non trovato nel database
-    $error_message = "Nome utente non trovato";
+    echo "username-error";
   }
 }
 
 // Chiudi la connessione al database
 $conn->close();
-?>
 
-<!DOCTYPE html>
-<html lang="it">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login</title>
-</head>
-<body>
-  <h2>Login</h2>
-  <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
-    <label for="username">Username:</label><br>
-    <input type="text" id="username" name="username"><br>
-    <label for="password">Password:</label><br>
-    <input type="password" id="password" name="password"><br><br>
-    <input type="submit" value="Login">
-  </form>
-  <?php 
-  // Mostra il messaggio di errore se presente
-  if (!empty($error_message)) {
-    echo "<p style='color: red;'>$error_message</p>";
-  }
-  ?>
-</body>
-</html>

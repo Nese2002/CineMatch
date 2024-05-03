@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
   var loginPage = document.getElementById("loginPage");
   var filmText = document.querySelector(".film-text");
   var signupText = document.querySelector(".signup-text");
-
+  console.log("YEEaaa");
   switchButton.addEventListener("click", function () {
     if (loginPage.style.left === "0px") {
       loginPage.style.left = "50%";
@@ -27,15 +27,38 @@ document.addEventListener("DOMContentLoaded", function () {
   var loginMessage = document.getElementById("loginMessage");
 
   loginForm.addEventListener("submit", function (event) {
-    var usernameValue = loginUsername.value;
-    var passwordValue = loginPassword.value;
+    var username = loginUsername.value;
+    var password = loginPassword.value;
 
-    console.log("Username: " + usernameValue);
-    console.log("Password: " + passwordValue);
+    event.preventDefault(); // Prevent the form from submitting normally
 
-    if (!validateLoginForm()) {
-      event.preventDefault();
-    }
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", "php/login.php", true);
+    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    xhr.onreadystatechange = function () {
+      if (this.readyState === 4 && this.status === 200) {
+        if (this.responseText.includes("success")) {
+          window.location.href = "../Quiz/index.html";
+          console.log("Login successful");
+        } else if (this.responseText.includes("username-error")) {
+          console.log("Login failed: " + this.responseText);
+          loginMessage.classList.add("error");
+          loginMessage.innerText = "Username non trovato";
+        } else {
+          console.log("Login failed: " + this.responseText);
+          loginMessage.classList.add("error");
+          loginMessage.innerText = "Password errata";
+        }
+      }
+    };
+    xhr.send(
+      "username=" +
+        encodeURIComponent(username) +
+        "&password=" +
+        encodeURIComponent(password)
+    );
+    console.log("Username: " + username);
+    console.log("Password: " + password);
   });
 
   loginForm.addEventListener("change", function (event) {
@@ -66,12 +89,44 @@ document.addEventListener("DOMContentLoaded", function () {
   var signupMessage = document.getElementById("signupMessage");
 
   signupForm.addEventListener("submit", function (event) {
-    var usernameValue = signupUsername.value;
-    var passwordValue = signupPassword.value;
+    var username = signupUsername.value;
+    var password = signupPassword.value;
 
-    if (!validateSignupForm()) {
-      event.preventDefault();
-    }
+    event.preventDefault(); // Prevent the form from submitting normally
+
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", "php/signup.php", true);
+    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    xhr.onreadystatechange = function () {
+      if (this.readyState === 4 && this.status === 200) {
+        if (this.responseText.includes("success")) {
+          signupMessage.classList.add("success");
+          signupMessage.innerText = "Registazione avvenuta con successo...";
+          setTimeout(function () {
+            window.location.href = "../Quiz/index.html";
+          }, 3000);
+
+          console.log("Signup successful");
+        } else if (this.responseText.includes("username-error")) {
+          console.log("Signup failed: " + this.responseText);
+          signupMessage.classList.add("error");
+          signupMessage.innerText = "Username già in uso";
+        } else {
+          console.log("Signup failed: " + this.responseText);
+          signupMessage.classList.add("error");
+          signupMessage.innerText =
+            "Inserire una password di almeno 6caratteri";
+        }
+      }
+    };
+    xhr.send(
+      "username=" +
+        encodeURIComponent(username) +
+        "&password=" +
+        encodeURIComponent(password)
+    );
+    console.log("Username: " + username);
+    console.log("Password: " + password);
   });
 
   signupForm.addEventListener("change", function (event) {
@@ -93,26 +148,26 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-function validateLoginForm() {
-  var username = document.forms["login"]["username"];
-  var password = document.forms["login"]["password"];
-  var message = document.getElementById("loginMessage");
+// function validateLoginForm() {
+//   var username = document.forms["login"]["username"];
+//   var password = document.forms["login"]["password"];
+//   var message = document.getElementById("loginMessage");
 
-  if (username.value === "" || password.value === "") {
-    message.classList.add("error");
-    return false;
-  }
-  return true;
-}
+//   if (username.value === "" || password.value === "") {
+//     message.classList.add("error");
+//     return false;
+//   }
+//   return true;
+// }
 
-function validateSignupForm() {
-  var username = document.forms["signup"]["username"];
-  var password = document.forms["signup"]["password"];
-  var message = document.getElementById("signupMessage");
+// function validateSignupForm() {
+//   var username = document.forms["signup"]["username"];
+//   var password = document.forms["signup"]["password"];
+//   var message = document.getElementById("signupMessage");
 
-  if (username.value === "" || password.value === "") {
-    message.classList.add("error");
-    return false;
-  }
-  return true;
-}
+//   if (username.value === "" || password.value === "") {
+//     message.classList.add("error");
+//     return false;
+//   }
+//   return true;
+// }

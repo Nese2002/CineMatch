@@ -29,9 +29,9 @@ document.addEventListener("DOMContentLoaded", function () {
         case "sectionGenere":
           getGenres();
           break;
-        case "sectionPaese":
-          getPaese();
-          break;
+        // case "sectionPaese":
+        //   getPaese();
+        //   break;
         case "sectionCast":
           getCast();
           break;
