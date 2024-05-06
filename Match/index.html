@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="../api_request/getMovieDetails.js"></script>
+    <script src="index.js"></script>
+    <script
+      src="https://kit.fontawesome.com/7b5b8543ec.js"
+      crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rokkitt:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet" />
+    <title>CineMatch</title>
+  </head>
+  <body>
+    <nav>
+      <ul class="navbar">
+        <li>
+          <a href="/">Quiz</a>
+          <div class="underline"></div>
+        </li>
+
+        <li>
+          <a class="" href="/Watchlist">Watchlist</a>
+          <div class="underline inactive"></div>
+        </li>
+      </ul>
+    </nav>
+    <div class="hero">
+      <div class="pc_submit">
+        <div class="submit-button">
+          <div class="submit-relative">
+            <button type="submit" class="submit" name="love">
+              <i class="fa-regular fa-heart icon"></i>
+            </button>
+            <div class="shadow-1"></div>
+            <div class="shadow-2"></div>
+          </div>
+        </div>
+      </div>
+      <div class="card-container" id="zonaFilm">
+        <div class="card-status">
+          <i class="fa-regular fa-heart icon"></i>
+          <i class="fa-solid fa-x icon"></i>
+        </div>
+        <!-- <div class="container">
+          <img
+            src="https://image.tmdb.org/t/p/w500/7IiTTgloJzvGI1TAYymCfbfl3vT.jpg"
+            alt="cover"
+            class="cover" />
+          <div id="gradient" class="gradient"></div>
+          <div class="text-container">
+            <div class="title-div">
+              <div class="flex-container">
+                <h1>Parasite</h1>
+                <h3>2h 15</h3>
+                <h3>Korea</h3>
+              </div>
+              <div class="flex-container">
+                <h3>8.6</h3>
+                <i class="fa-solid fa-star"></i>
+              </div>
+            </div>
+
+            <div class="subtitle-div">
+              <h3>2018</h3>
+              <div>
+                <h3>Dramma</h3>
+                <h3>Thriller</h3>
+              </div>
+            </div>
+            <p class="clamp">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam
+              eros lorem, congue a libero sed, bibendum pellentesque elit. Sed
+              pretium eros non mauris placerat cursus. Nulla non risus id lectus
+              interdum mattis. Vestibulum euismod, dolor ut aliquet faucibus,
+              ipsum ante efficitur nunc, ac ullamcorper justo lectus eu ipsum.
+              Fusce rutrum nisi vitae enim blandit, id egestas enim dignissim.
+              Phasellus nisl dui, mollis sed venenatis quis, aliquet a est.
+              Vestibulum commodo purus vitae sapien scelerisque pulvinar.
+              Phasellus faucibus felis eget nisi lacinia aliquam. Curabitur
+              aliquam cursus leo congue mattis. Curabitur id posuere ex. Proin
+              vestibulum nisl ac leo gravida euismod.
+            </p>
+
+            <h2 class="cast-text">Cast</h2>
+            <div id="cast" class="cast">
+              <h2>Cast</h2>
+              <div class="grid">
+                <div class="relative">
+                  <img
+                    src="https://image.tmdb.org/t/p/w500/whNwkEQYWLFJA8ij0WyOOAD5xhQ.jpg"
+                    alt="Profile Picture" />
+                  <h6>Jason Staham</h6>
+                </div>
+                <div class="relative">
+                  <img
+                    src="https://image.tmdb.org/t/p/w500/whNwkEQYWLFJA8ij0WyOOAD5xhQ.jpg"
+                    alt="Profile Picture" />
+                  <h6>Jason Staham</h6>
+                </div>
+                <div class="relative">
+                  <img
+                    src="https://image.tmdb.org/t/p/w500/whNwkEQYWLFJA8ij0WyOOAD5xhQ.jpg"
+                    alt="Profile Picture" />
+                  <h6>Jason Staham</h6>
+                </div>
+                <div class="relative">
+                  <img
+                    src="https://image.tmdb.org/t/p/w500/whNwkEQYWLFJA8ij0WyOOAD5xhQ.jpg"
+                    alt="Profile Picture" />
+                  <h6>Jason Staham</h6>
+                </div>
+                <div class="relative">
+                  <img
+                    src="https://image.tmdb.org/t/p/w500/whNwkEQYWLFJA8ij0WyOOAD5xhQ.jpg"
+                    alt="Profile Picture" />
+                  <h6>Jason Staham</h6>
+                </div>
+                <div class="relative">
+                  <img
+                    src="https://image.tmdb.org/t/p/w500/whNwkEQYWLFJA8ij0WyOOAD5xhQ.jpg"
+                    alt="Profile Picture" />
+                  <h6>Jason Staham</h6>
+                </div>
+                <div class="relative">
+                  <img
+                    src="https://image.tmdb.org/t/p/w500/whNwkEQYWLFJA8ij0WyOOAD5xhQ.jpg"
+                    alt="Profile Picture" />
+                  <h6>Jason Staham</h6>
+                </div>
+                <div class="relative">
+                  <img
+                    src="https://image.tmdb.org/t/p/w500/whNwkEQYWLFJA8ij0WyOOAD5xhQ.jpg"
+                    alt="Profile Picture" />
+                  <h6>Jason Staham</h6>
+                </div>
+                <div class="relative">
+                  <img
+                    src="https://image.tmdb.org/t/p/w500/whNwkEQYWLFJA8ij0WyOOAD5xhQ.jpg"
+                    alt="Profile Picture" />
+                  <h6>Jason Staham</h6>
+                </div>
+                <div class="relative">
+                  <img
+                    src="https://image.tmdb.org/t/p/w500/whNwkEQYWLFJA8ij0WyOOAD5xhQ.jpg"
+                    alt="Profile Picture" />
+                  <h6>Jason Staham</h6>
+                </div>
+                <div class="relative">
+                  <img
+                    src="https://image.tmdb.org/t/p/w500/whNwkEQYWLFJA8ij0WyOOAD5xhQ.jpg"
+                    alt="Profile Picture" />
+                  <h6>Jason Staham</h6>
+                </div>
+                <div class="relative">
+                  <img
+                    src="https://image.tmdb.org/t/p/w500/whNwkEQYWLFJA8ij0WyOOAD5xhQ.jpg"
+                    alt="Profile Picture" />
+                  <h6>Jason Staham</h6>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div> -->
+      </div>
+
+      <div class="pc_submit">
+        <div class="submit-button">
+          <div class="submit-relative">
+            <button type="submit" class="submit" name="trash">
+              <i class="fa-solid fa-x icon"></i>
+            </button>
+            <div class="shadow-1"></div>
+            <div class="shadow-2"></div>
+          </div>
+        </div>
+      </div>
+      <div class="mobile_submit">
+        <div class="submit-button">
+          <div class="submit-relative">
+            <button type="submit" class="submit" name="love">
+              <i class="fa-regular fa-heart icon"></i>
+            </button>
+            <div class="shadow-1"></div>
+            <div class="shadow-2"></div>
+          </div>
+        </div>
+        <div class="submit-button">
+          <div class="submit-relative-trash">
+            <button type="submit" class="submit" name="trash">
+              <i class="fa-solid fa-x icon"></i>
+            </button>
+            <div class="shadow-1"></div>
+            <div class="shadow-2"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

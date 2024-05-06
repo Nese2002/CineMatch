@@ -1,0 +1,500 @@
+* {
+  font: inherit;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+body {
+  background: linear-gradient(135deg, #000000 0%, #041506 50%, #000000 100%);
+  font-family: system-ui, sans-serif;
+  font-size: 1.125rem; /* 18px */
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  padding: 0 5rem;
+  overflow: hidden;
+}
+
+i {
+  color: white;
+}
+
+.navbar {
+  margin: auto;
+  display: flex;
+  justify-content: center;
+}
+
+nav {
+  padding: 0.5rem 0;
+  position: relative;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.underline {
+  height: 0.1rem;
+  border-radius: 1rem;
+  width: 100%;
+  background-color: white;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  font-size: 1.5rem;
+  display: block;
+  padding: 0.25rem 1rem;
+  color: white;
+  text-decoration: none;
+  font-weight: medium;
+}
+
+h1 {
+  font-size: 3rem;
+  color: #ffffff;
+  font-family: "Rokkitt";
+  line-height: 1.75rem;
+}
+
+h2 {
+  font-size: 2rem;
+  color: #ffffff;
+  white-space: nowrap;
+  font-family: "Rokkitt";
+  margin-top: 2rem;
+  width: 100%;
+  text-align: left;
+}
+
+h3 {
+  font-size: 1.5rem;
+  color: #9999a2;
+  font-family: "Rokkitt";
+  line-height: 1rem;
+}
+
+p {
+  margin-top: 1rem;
+  font-size: 1.125rem;
+  color: white;
+  font-family: "Rokkitt";
+}
+
+/* --------------------------------
+
+Component 
+
+-------------------------------- */
+.navbar {
+  margin: auto;
+  display: flex;
+  justify-content: center;
+}
+
+.inactive {
+  visibility: hidden;
+}
+
+.hero {
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-grow: 1;
+}
+
+.submit-button {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem; /*3rem*/
+}
+.submit-relative {
+  position: relative;
+}
+
+.submit-relative-trash {
+  position: relative;
+  margin-left: 0;
+}
+
+.submit {
+  background-color: transparent;
+  position: relative;
+  z-index: 1;
+  border: 1px solid #ffffff;
+  color: white;
+  border-radius: 100%;
+  padding: 1rem 1.5rem;
+  font-size: 2rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.submit:hover ~ .shadow-1 {
+  transform: scale(1.2);
+  transition: all 0.3s ease;
+}
+
+.submit:hover ~ .shadow-2 {
+  transform: scale(1.4);
+  transition: all 0.3s ease;
+}
+
+.shadow-1 {
+  transition: all 0.3s ease;
+  position: absolute;
+  inset: 0;
+  filter: blur(1px);
+  border: 1px solid #ffffff;
+  color: white;
+  border-radius: 100%;
+}
+.shadow-2 {
+  transition: all 0.3s ease;
+  position: absolute;
+  inset: 0;
+  filter: blur(2px);
+  border: 1px solid #ffffff;
+  color: white;
+  border-radius: 100%;
+}
+
+.mobile_submit {
+  display: none;
+}
+
+.container {
+  width: 100%;
+  min-height: 100%;
+  background-color: #041506;
+  border: white 1px solid;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  position: absolute;
+  will-change: transform;
+  transition: all 0.3s ease-in-out;
+  cursor: -webkit-grab;
+  cursor: -moz-grab;
+  cursor: grab;
+  border-radius: 20px;
+  flex-grow: 1;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.card-container {
+  width: 100%;
+  height: 90%;
+  border-radius: 20px;
+  margin-left: 2rem;
+  margin-right: 2rem;
+  flex-grow: 1;
+  margin-top: 0;
+  margin-bottom: 0;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.cover {
+  grid-column: span 4 / span 4;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 20px 0 0 20px;
+  position: relative;
+  pointer-events: none;
+}
+
+.gradient {
+  display: none;
+}
+
+.title-div {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: end;
+}
+
+.title-div h3 {
+  margin-left: 1.5rem;
+}
+
+.subtitle-div {
+  margin-top: 1rem;
+  display: flex;
+  width: 100%;
+  justify-content: start;
+  align-items: end;
+}
+
+.subtitle-div div {
+  margin-left: 1.5rem;
+  display: flex;
+}
+
+.subtitle-div div h3 {
+  margin-left: 0.8rem;
+}
+
+.fa-star {
+  color: #ffd700;
+  margin-left: 0.5rem;
+}
+.flex-container {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.text-container {
+  position: relative;
+  flex-grow: 1;
+  padding: 2rem;
+  grid-column: span 8 / span 8;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  pointer-events: none;
+}
+
+.cast {
+  width: 100%;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  padding-bottom: 1rem;
+  cursor: pointer;
+  pointer-events: all;
+  position: relative;
+}
+.cast::-webkit-scrollbar {
+  height: 7px;
+}
+
+.cast::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.cast::-webkit-scrollbar-thumb {
+  pointer-events: auto;
+  cursor: pointer;
+  background: #ffffff; /* Color of the scroll thumb */
+}
+.cast .grid {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  margin-top: 0.2rem;
+}
+
+.cast img {
+  height: 5rem;
+  border-radius: 5px;
+  object-fit: cover;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+.cast h6 {
+  color: white;
+  font-size: 0.8rem;
+  margin-top: 0.2rem;
+  line-height: 0.8rem;
+  font-family: "Rokkitt";
+  text-shadow: 2px 2px 4px rgb(0, 0, 0);
+}
+
+.relative {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-right: 1.5rem;
+}
+
+.cast-text {
+  display: block;
+}
+
+.cast h2 {
+  display: none;
+}
+
+/*Tinder components*/
+
+.card-status {
+  pointer-events: none;
+}
+
+.card-status i {
+  font-size: 100px;
+  opacity: 0;
+  transform: scale(0.3);
+  transition: all 0.2s ease-in-out;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  z-index: 20;
+}
+.moving.container {
+  transition: none;
+  cursor: -webkit-grabbing;
+  cursor: -moz-grabbing;
+  cursor: grabbing;
+}
+
+.love .fa-heart {
+  opacity: 0.7;
+  transform: scale(1);
+  transform: translateX(-4rem);
+}
+
+.trash .fa-x {
+  opacity: 0.7;
+  transform: scale(1);
+}
+
+@media (max-width: 1120px) {
+  .hero {
+    flex-direction: column;
+  }
+
+  .pc_submit {
+    display: none;
+  }
+
+  .mobile_submit {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .card-container {
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    flex-grow: 1;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    display: flex;
+
+    flex-direction: column;
+  }
+
+  .cover {
+    position: absolute;
+    inset: 0;
+    height: 100%;
+    border-radius: 15px;
+  }
+
+  .gradient {
+    background: linear-gradient(#00000000 0%, #000000 100%);
+    border-radius: 20px;
+    position: absolute;
+    inset: 0;
+    height: 100%;
+    display: block;
+    transition: all 1s ease;
+    pointer-events: none;
+  }
+
+  .gradient-clicked {
+    background: linear-gradient(#00000000 0%, #000000 100%);
+    background-color: #000000d0;
+    border-radius: 20px;
+    position: absolute;
+    inset: 0;
+    height: 100%;
+    display: block;
+    transition: all 1s ease;
+  }
+
+  .text-container {
+    justify-content: end;
+    align-items: end;
+  }
+  .cast {
+    display: none;
+  }
+
+  .cast .grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: center;
+    align-items: center;
+    margin-top: 0.5rem;
+    row-gap: 2rem;
+  }
+
+  .relative {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-right: 0;
+  }
+
+  .cast img {
+    width: 5rem;
+    height: 5rem;
+    border-radius: 10px;
+    margin-right: 0;
+  }
+
+  .cast h2 {
+    font-size: 2rem;
+    color: #ffffff;
+    white-space: nowrap;
+    font-family: "Rokkitt";
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    width: 100%;
+    text-align: center;
+    display: block;
+  }
+
+  .cast h6 {
+    color: white;
+    font-size: 0.8rem;
+    position: absolute;
+    bottom: -1rem;
+    font-family: "Rokkitt";
+    text-shadow: #000000 0px 0px 10px;
+  }
+
+  .submit-relative-trash {
+    position: relative;
+    margin-left: 1rem;
+  }
+  .clamp {
+    transition: all 3s ease;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .cast-text {
+    display: none;
+  }
+}

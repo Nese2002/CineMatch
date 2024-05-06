@@ -12,10 +12,10 @@ let zonaDinamica = document.getElementById("zonaPaese");
           let label = document.createElement("label");
   let input = document.createElement("input");
   let span = document.createElement("span");
-
     label.setAttribute("class", "checkbox-container");
     input.setAttribute("type", "checkbox");
     input.setAttribute("id", item.iso_3166_1);
+    input.setAttribute("name", item.language);
     span.setAttribute("class", "map-text");
     span.textContent = item.native_name;
 
@@ -31,7 +31,6 @@ let textInput = document.querySelector("#mapSearch");
 textInput.addEventListener("input", function () {
   let searchText = textInput.value;
   let spans = document.querySelectorAll("#zonaPaese span");
-console.log(spans);
   for (let span of spans) {
     var text = span.innerHTML.toLowerCase();
 
@@ -58,7 +57,6 @@ let form = document.getElementById("paese");
 
   // Create the SVG element
   var svg = d3.select("#map").attr("width", width).attr("height", height);
-  console.log("YEEEE");
 
 var zoom = d3.zoom().scaleExtent([0.5, 20]).on("zoom", zoomed);
 
@@ -77,8 +75,6 @@ function zoomed() {
   // Load the GeoJSON data
   d3.json("country.json")
     .then(function (world) {
-      // Log the data to the console
-      console.log(world);
 
       svg
         .selectAll("path")

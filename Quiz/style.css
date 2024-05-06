@@ -33,6 +33,8 @@ nav {
   transform: translateX(-50%);
 }
 
+
+
 ul {
   list-style: none;
 }
@@ -432,4 +434,167 @@ input[type="number"]:focus {
   padding: 0.5rem 1rem;
   background-color: #041506;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+/*CAST*/
+
+.form-attori{
+width: fit-content;
+}
+.actor-grid {
+display: grid;
+padding-left: 1rem;
+padding-right: 1rem;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  align-items: start;
+  margin-top: 2rem;
+  width: 100%;
+  height: 50vh;
+  overflow-y: scroll;
+}
+
+.actor-grid::-webkit-scrollbar {
+  width: 5px;
+}
+
+.actor-grid::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.actor-grid::-webkit-scrollbar-thumb {
+  background: #ffffff; /* Color of the scroll thumb */
+}
+
+
+.actor-container {
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+  position: relative;
+}
+/* Hide the default checkbox */
+.actor-container input[type="checkbox"] {
+  display: none;
+}
+
+/* Create a custom checkbox */
+.actor-container input[type="checkbox"] + .actor-checkbox {
+  position: relative;
+  display: flex;
+  border-radius: 15px;
+  width: 12rem;
+  height: 100%;
+  background-color: #041506;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.actor-container input[type="checkbox"]:hover + .actor-checkbox {
+  background-color: #05370b;
+  box-shadow: 0 4px 8px 0 rgba(0, 255, 17, 0.3),
+    0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  color: white;
+}
+
+.actor-container input[type="checkbox"]:checked + .actor-checkbox {
+  background-color: #066e12;
+  box-shadow: 0 4px 8px 0 rgba(0, 255, 17, 0.3),
+    0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  color: white;
+}
+
+.actor-text {
+  font-size: clamp(1rem, 1.5rem, 2.5rem);
+  width: fit-content;
+  color: white;
+  pointer-events: none;
+  right: 1rem;
+  line-height: 1.3rem;
+  position: relative;
+   text-shadow: 2px 2px 4px rgb(0, 0, 0);
+}
+
+.ruolo-text{
+  font-size: clamp(0.5rem, 1rem, 1.5rem);
+  width: fit-content;
+  color: #9999a2;
+  pointer-events: none;
+  writing-mode: vertical-rl;
+  margin-top: 0.5rem;
+
+}
+
+.text-div{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+}
+.actor-img{
+  width: 6rem;
+  min-height: 100%;
+  object-fit: cover;
+  border-radius: 15px 0 0 15px;
+}
+
+
+/*Durata*/
+.durataGrid{
+  margin-top: 2rem;
+}
+
+.durataForm {
+  width: 50%;
+}
+
+/*Provider*/
+.gridProvider{
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  align-items: start;
+  margin-top: 3rem;
+  height: 50vh;
+  overflow-y: scroll;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+.gridProvider::-webkit-scrollbar {
+  width: 5px;
+}
+
+.gridProvider::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.gridProvider::-webkit-scrollbar-thumb {
+  background: #ffffff; /* Color of the scroll thumb */
+}
+
+.checkbox-img {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 35%;
+  object-fit: cover;
+  margin-right: 1rem;
+}
+
+.checkbox-container input[type="checkbox"]:hover + .checkbox-img {
+  background-color: #05370b;
+  box-shadow: 0 4px 8px 0 rgba(0, 255, 17, 0.3),
+    0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    padding: 0.5rem 0.5rem;
+}
+
+.checkbox-container input[type="checkbox"]:checked + .checkbox-img {
+  background-color: #066e12;
+  box-shadow: 0 4px 8px 0 rgba(0, 255, 17, 0.3),
+    0 6px 20px 0 rgba(0, 0, 0, 0.19);
+     padding: 0.5rem 0.5rem;
+}
+
+.checkbox-container input[type="checkbox"] + .checkbox-img {
+  position: relative;
+ width: 4rem;
+  height: 4rem;
+ padding: 0.5rem 0.5rem;
 }

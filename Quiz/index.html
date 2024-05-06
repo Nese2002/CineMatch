@@ -6,13 +6,14 @@
     <link rel="stylesheet" href="style.css" />
     <script src="https://d3js.org/d3.v5.min.js"></script>
     <script src="https://unpkg.com/topojson@3"></script>
-    <script type="module" src="index.js"></script>
-    <script type="module" src="inputNumber.js"></script>
+    <script src="../api_request/apiRequest.js"></script>
+    <script src="index.js"></script>
+    <script src="inputNumber.js"></script>
     <script src="map.js"></script>
     <script
       src="https://kit.fontawesome.com/7b5b8543ec.js"
       crossorigin="anonymous"></script>
-    <title>Document</title>
+    <title>CineMatch</title>
   </head>
   <body>
     <nav>
@@ -70,11 +71,7 @@
           </div>
           <div class="submit-button">
             <div class="submit-relative">
-              <button
-                type="submit"
-                disabled="true"
-                class="submit"
-                id="submitFilters">
+              <button type="submit" class="submit" id="submitFilters">
                 <i class="fa-solid fa-check"></i>
               </button>
               <div class="shadow-1"></div>
@@ -187,31 +184,31 @@
         </div>
         <div class="">
           <form
-          action=""
-          method="post"
-          name="paese"
-          autocomplete="off"
-          class=""
-          id="paese">
-          <div class="select-paese">
-            <div id="zonaPaese" class="gridPaese"></div>
-            
-            <svg id="map"></svg>
-          </div>
-          <div class="submit-button">
-            <div class="submit-relative">
-              <button
-                type="submit"
-                disabled="true"
-                class="submit checkbox"
-                id="submitPaese">
-                <i class="fa-solid fa-check"></i>
-              </button>
-              <div class="shadow-1"></div>
-              <div class="shadow-2"></div>
+            action=""
+            method="post"
+            name="paese"
+            autocomplete="off"
+            class=""
+            id="paese">
+            <div class="select-paese">
+              <div id="zonaPaese" class="gridPaese"></div>
+
+              <svg id="map"></svg>
             </div>
-          </div>
-        </form>
+            <div class="submit-button">
+              <div class="submit-relative">
+                <button
+                  type="submit"
+                  disabled="true"
+                  class="submit checkbox"
+                  id="submitPaese">
+                  <i class="fa-solid fa-check"></i>
+                </button>
+                <div class="shadow-1"></div>
+                <div class="shadow-2"></div>
+              </div>
+            </div>
+          </form>
         </div>
       </div>
     </section>
@@ -223,22 +220,113 @@
           <h2>Quali attori vorresti vedere?</h2>
           <div class="underline"></div>
         </div>
+        <div class="search-bar">
+          <i class="fa-solid fa-search"></i>
+          <input
+            autocomplete="off"
+            type="text"
+            name="search"
+            id="searchAttori"
+            placeholder="Cerca un attore" />
+        </div>
+        <form
+          action=""
+          method="post"
+          name="attori"
+          autocomplete="off"
+          class="form-attori"
+          id="attori">
+          <div id="zonaAttori" class="actor-grid"></div>
+          <div class="submit-button">
+            <div class="submit-relative">
+              <button
+                type="submit"
+                disabled="true"
+                class="submit checkbox"
+                id="submitAttori">
+                <i class="fa-solid fa-check"></i>
+              </button>
+              <div class="shadow-1"></div>
+              <div class="shadow-2"></div>
+            </div>
+          </div>
+        </form>
       </div>
     </section>
+
+    <!-- DURATA -->
     <section class="hidden-section" id="sectionDurata">
       <div class="center">
         <div class="">
-          <h2>Quanto tempo hai a disposizione?</h2>
+          <h2>Quanto minuti hai a disposizione?</h2>
           <div class="underline"></div>
         </div>
+        <form
+          action=""
+          method="post"
+          name="durata"
+          autocomplete="off"
+          id="durata"
+          class="durataForm">
+          <div class="durataGrid">
+            <input
+              type="number"
+              min="0"
+              max="500"
+              value="135"
+              id="durataInput" />
+          </div>
+          <div class="submit-button">
+            <div class="submit-relative">
+              <button type="submit" class="submit" id="submitAnno">
+                <i class="fa-solid fa-check"></i>
+              </button>
+              <div class="shadow-1"></div>
+              <div class="shadow-2"></div>
+            </div>
+          </div>
+        </form>
       </div>
     </section>
+
+    <!-- PROVIDER -->
     <section class="hidden-section" id="sectionProvider">
       <div class="center">
         <div class="">
           <h2>Dove vuoi vedere il film?</h2>
           <div class="underline"></div>
         </div>
+        <div class="search-bar">
+          <i class="fa-solid fa-search"></i>
+          <input
+            autocomplete="off"
+            type="text"
+            name="search"
+            id="searchProvider"
+            placeholder="Cerca un provider" />
+        </div>
+        <form
+          action=""
+          method="post"
+          name="provider"
+          autocomplete="off"
+          class=""
+          id="provider">
+          <div id="zonaProvider" class="gridProvider"></div>
+          <div class="submit-button">
+            <div class="submit-relative">
+              <button
+                type="submit"
+                disabled="true"
+                class="submit checkbox"
+                id="submitProvider">
+                <i class="fa-solid fa-check"></i>
+              </button>
+              <div class="shadow-1"></div>
+              <div class="shadow-2"></div>
+            </div>
+          </div>
+        </form>
       </div>
     </section>
   </body>

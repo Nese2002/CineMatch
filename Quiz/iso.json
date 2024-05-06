@@ -7,7 +7,8 @@
   {
     "iso_3166_1": "AE",
     "english_name": "United Arab Emirates",
-    "native_name": "Emirati Arabi Uniti"
+    "native_name": "Emirati Arabi Uniti",
+    "language": "ar"
   },
   {
     "iso_3166_1": "AF",
@@ -27,7 +28,8 @@
   {
     "iso_3166_1": "AL",
     "english_name": "Albania",
-    "native_name": "Albania"
+    "native_name": "Albania",
+    "language": "sq"
   },
   {
     "iso_3166_1": "AM",
@@ -42,7 +44,8 @@
   {
     "iso_3166_1": "AO",
     "english_name": "Angola",
-    "native_name": "Angola"
+    "native_name": "Angola",
+    "language": "ln%7Cpt"
   },
   {
     "iso_3166_1": "AQ",
@@ -52,7 +55,8 @@
   {
     "iso_3166_1": "AR",
     "english_name": "Argentina",
-    "native_name": "Argentina"
+    "native_name": "Argentina",
+    "language": "es"
   },
   {
     "iso_3166_1": "AS",
@@ -62,12 +66,14 @@
   {
     "iso_3166_1": "AT",
     "english_name": "Austria",
-    "native_name": "Austria"
+    "native_name": "Austria",
+    "language": "de"
   },
   {
     "iso_3166_1": "AU",
     "english_name": "Australia",
-    "native_name": "Australia"
+    "native_name": "Australia",
+    "language": "en"
   },
   {
     "iso_3166_1": "AW",
@@ -77,12 +83,14 @@
   {
     "iso_3166_1": "AZ",
     "english_name": "Azerbaijan",
-    "native_name": "Azerbaigian"
+    "native_name": "Azerbaigian",
+    "language": "az"
   },
   {
     "iso_3166_1": "BA",
     "english_name": "Bosnia and Herzegovina",
-    "native_name": "Bosnia-Erzegovina"
+    "native_name": "Bosnia-Erzegovina",
+    "language": "bs%7Chr%7Cen%7Csr"
   },
   {
     "iso_3166_1": "BB",
@@ -97,17 +105,20 @@
   {
     "iso_3166_1": "BE",
     "english_name": "Belgium",
-    "native_name": "Belgio"
+    "native_name": "Belgio",
+    "language": "nl%7Cfr%7Cde"
   },
   {
     "iso_3166_1": "BF",
     "english_name": "Burkina Faso",
-    "native_name": "Burkina Faso"
+    "native_name": "Burkina Faso",
+    "language": "fr%7Cff"
   },
   {
     "iso_3166_1": "BG",
     "english_name": "Bulgaria",
-    "native_name": "Bulgaria"
+    "native_name": "Bulgaria",
+    "language": "bg"
   },
   {
     "iso_3166_1": "BH",
@@ -127,7 +138,8 @@
   {
     "iso_3166_1": "BM",
     "english_name": "Bermuda",
-    "native_name": "Bermuda"
+    "native_name": "Bermuda",
+    "language": "en%7Ces"
   },
   {
     "iso_3166_1": "BN",
@@ -137,17 +149,20 @@
   {
     "iso_3166_1": "BO",
     "english_name": "Bolivia",
-    "native_name": "Bolivia"
+    "native_name": "Bolivia",
+    "language": "qu%7Ces"
   },
   {
     "iso_3166_1": "BR",
     "english_name": "Brazil",
-    "native_name": "Brasile"
+    "native_name": "Brasile",
+    "language": "pt%7Ces"
   },
   {
     "iso_3166_1": "BS",
     "english_name": "Bahamas",
-    "native_name": "Bahamas"
+    "native_name": "Bahamas",
+    "language": "en%7Ces"
   },
   {
     "iso_3166_1": "BT",
@@ -172,17 +187,20 @@
   {
     "iso_3166_1": "BY",
     "english_name": "Belarus",
-    "native_name": "Bielorussia"
+    "native_name": "Bielorussia",
+    "language": "be%7Cru"
   },
   {
     "iso_3166_1": "BZ",
     "english_name": "Belize",
-    "native_name": "Belize"
+    "native_name": "Belize",
+    "language": "en%7Ces"
   },
   {
     "iso_3166_1": "CA",
     "english_name": "Canada",
-    "native_name": "Canada"
+    "native_name": "Canada",
+    "language": "en%7Cfr%7Ciu%7Ces"
   },
   {
     "iso_3166_1": "CC",
@@ -192,7 +210,8 @@
   {
     "iso_3166_1": "CD",
     "english_name": "Congo",
-    "native_name": "Congo - Kinshasa"
+    "native_name": "Congo - Kinshasa",
+    "language": "fr%7Cln%7Clu%7Csw"
   },
   {
     "iso_3166_1": "CF",
@@ -207,12 +226,14 @@
   {
     "iso_3166_1": "CH",
     "english_name": "Switzerland",
-    "native_name": "Svizzera"
+    "native_name": "Svizzera",
+    "language": "fr%7Cde%7Cit%7Cpt%7Crm"
   },
   {
     "iso_3166_1": "CI",
     "english_name": "Cote D'Ivoire",
-    "native_name": "Costa d’Avorio"
+    "native_name": "Costa d’Avorio",
+    "language": "fr"
   },
   {
     "iso_3166_1": "CK",
@@ -222,27 +243,32 @@
   {
     "iso_3166_1": "CL",
     "english_name": "Chile",
-    "native_name": "Cile"
+    "native_name": "Cile",
+    "language": "es"
   },
   {
     "iso_3166_1": "CM",
     "english_name": "Cameroon",
-    "native_name": "Camerun"
+    "native_name": "Camerun",
+    "language": "en%7Cfr%7Cff"
   },
   {
     "iso_3166_1": "CN",
     "english_name": "China",
-    "native_name": "Cina"
+    "native_name": "Cina",
+    "language": "zh%7Cii%7Cbo%7Cug"
   },
   {
     "iso_3166_1": "CO",
     "english_name": "Colombia",
-    "native_name": "Colombia"
+    "native_name": "Colombia",
+    "language": "es"
   },
   {
     "iso_3166_1": "CR",
     "english_name": "Costa Rica",
-    "native_name": "Costa Rica"
+    "native_name": "Costa Rica",
+    "language": "es"
   },
   {
     "iso_3166_1": "CS",
@@ -252,7 +278,8 @@
   {
     "iso_3166_1": "CU",
     "english_name": "Cuba",
-    "native_name": "Cuba"
+    "native_name": "Cuba",
+    "language": "es"
   },
   {
     "iso_3166_1": "CV",
@@ -267,17 +294,20 @@
   {
     "iso_3166_1": "CY",
     "english_name": "Cyprus",
-    "native_name": "Cipro"
+    "native_name": "Cipro",
+    "language": "el%7Ctr"
   },
   {
     "iso_3166_1": "CZ",
     "english_name": "Czech Republic",
-    "native_name": "Repubblica Ceca"
+    "native_name": "Repubblica Ceca",
+    "language": "cs"
   },
   {
     "iso_3166_1": "DE",
     "english_name": "Germany",
-    "native_name": "Germania"
+    "native_name": "Germania",
+    "language": "de"
   },
   {
     "iso_3166_1": "DJ",
@@ -287,7 +317,8 @@
   {
     "iso_3166_1": "DK",
     "english_name": "Denmark",
-    "native_name": "Danimarca"
+    "native_name": "Danimarca",
+    "language": "da%7Cfo"
   },
   {
     "iso_3166_1": "DM",
@@ -297,27 +328,32 @@
   {
     "iso_3166_1": "DO",
     "english_name": "Dominican Republic",
-    "native_name": "Repubblica Dominicana"
+    "native_name": "Repubblica Dominicana",
+    "language": "es"
   },
   {
     "iso_3166_1": "DZ",
     "english_name": "Algeria",
-    "native_name": "Algeria"
+    "native_name": "Algeria",
+    "language": "ar%7Cfr"
   },
   {
     "iso_3166_1": "EC",
     "english_name": "Ecuador",
-    "native_name": "Ecuador"
+    "native_name": "Ecuador",
+    "language": "qu%7Ces"
   },
   {
     "iso_3166_1": "EE",
     "english_name": "Estonia",
-    "native_name": "Estonia"
+    "native_name": "Estonia",
+    "language": "et"
   },
   {
     "iso_3166_1": "EG",
     "english_name": "Egypt",
-    "native_name": "Egitto"
+    "native_name": "Egitto",
+    "language": "ar"
   },
   {
     "iso_3166_1": "EH",
@@ -332,7 +368,8 @@
   {
     "iso_3166_1": "ES",
     "english_name": "Spain",
-    "native_name": "Spagna"
+    "native_name": "Spagna",
+    "language": "es%7Cca%7Ceu%7Cgl"
   },
   {
     "iso_3166_1": "ET",
@@ -342,12 +379,14 @@
   {
     "iso_3166_1": "FI",
     "english_name": "Finland",
-    "native_name": "Finlandia"
+    "native_name": "Finlandia",
+    "language": "fi%7Csv"
   },
   {
     "iso_3166_1": "FJ",
     "english_name": "Fiji",
-    "native_name": "Figi"
+    "native_name": "Figi",
+    "language": "en"
   },
   {
     "iso_3166_1": "FK",
@@ -367,7 +406,8 @@
   {
     "iso_3166_1": "FR",
     "english_name": "France",
-    "native_name": "Francia"
+    "native_name": "Francia",
+    "language": "fr%7Cco%7Cbr"
   },
   {
     "iso_3166_1": "GA",
@@ -377,7 +417,8 @@
   {
     "iso_3166_1": "GB",
     "english_name": "United Kingdom",
-    "native_name": "Regno Unito"
+    "native_name": "Regno Unito",
+    "language": "kw%7Cen%7Cgd%7Ccy"
   },
   {
     "iso_3166_1": "GD",
@@ -392,12 +433,14 @@
   {
     "iso_3166_1": "GF",
     "english_name": "French Guiana",
-    "native_name": "Guiana Francese"
+    "native_name": "Guiana Francese",
+    "language": "fe%7Ces"
   },
   {
     "iso_3166_1": "GH",
     "english_name": "Ghana",
-    "native_name": "Ghana"
+    "native_name": "Ghana",
+    "language": "en%7Cee%7Cff%7Cha"
   },
   {
     "iso_3166_1": "GI",
@@ -427,12 +470,14 @@
   {
     "iso_3166_1": "GQ",
     "english_name": "Equatorial Guinea",
-    "native_name": "Guinea Equatoriale"
+    "native_name": "Guinea Equatoriale",
+    "language": "fr%7Cpt%7Ces"
   },
   {
     "iso_3166_1": "GR",
     "english_name": "Greece",
-    "native_name": "Grecia"
+    "native_name": "Grecia",
+    "language": "el"
   },
   {
     "iso_3166_1": "GS",
@@ -442,7 +487,8 @@
   {
     "iso_3166_1": "GT",
     "english_name": "Guatemala",
-    "native_name": "Guatemala"
+    "native_name": "Guatemala",
+    "language": "es"
   },
   {
     "iso_3166_1": "GU",
@@ -457,7 +503,8 @@
   {
     "iso_3166_1": "GY",
     "english_name": "Guyana",
-    "native_name": "Guyana"
+    "native_name": "Guyana",
+    "language": "en%7Ces"
   },
   {
     "iso_3166_1": "HK",
@@ -472,12 +519,14 @@
   {
     "iso_3166_1": "HN",
     "english_name": "Honduras",
-    "native_name": "Honduras"
+    "native_name": "Honduras",
+    "language": "es"
   },
   {
     "iso_3166_1": "HR",
     "english_name": "Croatia",
-    "native_name": "Croazia"
+    "native_name": "Croazia",
+    "language": "hr"
   },
   {
     "iso_3166_1": "HT",
@@ -487,27 +536,32 @@
   {
     "iso_3166_1": "HU",
     "english_name": "Hungary",
-    "native_name": "Ungheria"
+    "native_name": "Ungheria",
+    "language": "hu"
   },
   {
     "iso_3166_1": "ID",
     "english_name": "Indonesia",
-    "native_name": "Indonesia"
+    "native_name": "Indonesia",
+    "language": "id%7Cjv"
   },
   {
     "iso_3166_1": "IE",
     "english_name": "Ireland",
-    "native_name": "Irlanda"
+    "native_name": "Irlanda",
+    "language": "en%7Cga"
   },
   {
     "iso_3166_1": "IL",
     "english_name": "Israel",
-    "native_name": "Israele"
+    "native_name": "Israele",
+    "language": "ar%7Che"
   },
   {
     "iso_3166_1": "IN",
     "english_name": "India",
-    "native_name": "India"
+    "native_name": "India",
+    "language": "hi%7Cen%7Cas%7Cbn%7Cgu%7Ckn%7Cks%7Cml%7Cmr%7Cne%7Cor%7Cpa%7Csa%7Cta%7Cte%7Cbo%7Cur"
   },
   {
     "iso_3166_1": "IO",
@@ -517,7 +571,8 @@
   {
     "iso_3166_1": "IQ",
     "english_name": "Iraq",
-    "native_name": "Iraq"
+    "native_name": "Iraq",
+    "language": "ar"
   },
   {
     "iso_3166_1": "IR",
@@ -527,32 +582,38 @@
   {
     "iso_3166_1": "IS",
     "english_name": "Iceland",
-    "native_name": "Islanda"
+    "native_name": "Islanda",
+    "language": "is"
   },
   {
     "iso_3166_1": "IT",
     "english_name": "Italy",
-    "native_name": "Italia"
+    "native_name": "Italia",
+    "language": "it"
   },
   {
     "iso_3166_1": "JM",
     "english_name": "Jamaica",
-    "native_name": "Giamaica"
+    "native_name": "Giamaica",
+    "language": "en"
   },
   {
     "iso_3166_1": "JO",
     "english_name": "Jordan",
-    "native_name": "Giordania"
+    "native_name": "Giordania",
+    "language": "ar"
   },
   {
     "iso_3166_1": "JP",
     "english_name": "Japan",
-    "native_name": "Giappone"
+    "native_name": "Giappone",
+    "language": "ja"
   },
   {
     "iso_3166_1": "KE",
     "english_name": "Kenya",
-    "native_name": "Kenya"
+    "native_name": "Kenya",
+    "language": "sw%7Cen%7Cki%7Com%7Cso"
   },
   {
     "iso_3166_1": "KG",
@@ -587,12 +648,14 @@
   {
     "iso_3166_1": "KR",
     "english_name": "South Korea",
-    "native_name": "Corea del Sud"
+    "native_name": "Corea del Sud",
+    "language": "ko"
   },
   {
     "iso_3166_1": "KW",
     "english_name": "Kuwait",
-    "native_name": "Kuwait"
+    "native_name": "Kuwait",
+    "language": "ar"
   },
   {
     "iso_3166_1": "KY",
@@ -612,7 +675,8 @@
   {
     "iso_3166_1": "LB",
     "english_name": "Lebanon",
-    "native_name": "Libano"
+    "native_name": "Libano",
+    "language": "ar"
   },
   {
     "iso_3166_1": "LC",
@@ -642,27 +706,32 @@
   {
     "iso_3166_1": "LT",
     "english_name": "Lithuania",
-    "native_name": "Lituania"
+    "native_name": "Lituania",
+    "language": "lt"
   },
   {
     "iso_3166_1": "LU",
     "english_name": "Luxembourg",
-    "native_name": "Lussemburgo"
+    "native_name": "Lussemburgo",
+    "language": "fr%7Cde%7Clb"
   },
   {
     "iso_3166_1": "LV",
     "english_name": "Latvia",
-    "native_name": "Lettonia"
+    "native_name": "Lettonia",
+    "language": "lv"
   },
   {
     "iso_3166_1": "LY",
     "english_name": "Libyan Arab Jamahiriya",
-    "native_name": "Libia"
+    "native_name": "Libia",
+    "language": "ar"
   },
   {
     "iso_3166_1": "MA",
     "english_name": "Morocco",
-    "native_name": "Marocco"
+    "native_name": "Marocco",
+    "language": "ar%7Cfr"
   },
   {
     "iso_3166_1": "MC",
@@ -672,17 +741,20 @@
   {
     "iso_3166_1": "MD",
     "english_name": "Moldova",
-    "native_name": "Moldavia"
+    "native_name": "Moldavia",
+    "language": "ro%7Cru"
   },
   {
     "iso_3166_1": "ME",
     "english_name": "Montenegro",
-    "native_name": "Montenegro"
+    "native_name": "Montenegro",
+    "language": "sr"
   },
   {
     "iso_3166_1": "MG",
     "english_name": "Madagascar",
-    "native_name": "Madagascar"
+    "native_name": "Madagascar",
+    "language": "mg"
   },
   {
     "iso_3166_1": "MH",
@@ -692,12 +764,14 @@
   {
     "iso_3166_1": "MK",
     "english_name": "Macedonia",
-    "native_name": "Repubblica di Macedonia"
+    "native_name": "Repubblica di Macedonia",
+    "language": "mk%7Csq"
   },
   {
     "iso_3166_1": "ML",
     "english_name": "Mali",
-    "native_name": "Mali"
+    "native_name": "Mali",
+    "language": "bm%7Cfr"
   },
   {
     "iso_3166_1": "MM",
@@ -737,7 +811,8 @@
   {
     "iso_3166_1": "MT",
     "english_name": "Malta",
-    "native_name": "Malta"
+    "native_name": "Malta",
+    "language": "en%7Cmt"
   },
   {
     "iso_3166_1": "MU",
@@ -752,22 +827,26 @@
   {
     "iso_3166_1": "MW",
     "english_name": "Malawi",
-    "native_name": "Malawi"
+    "native_name": "Malawi",
+    "language": "en%7Cny"
   },
   {
     "iso_3166_1": "MX",
     "english_name": "Mexico",
-    "native_name": "Messico"
+    "native_name": "Messico",
+    "language": "es"
   },
   {
     "iso_3166_1": "MY",
     "english_name": "Malaysia",
-    "native_name": "Malesia"
+    "native_name": "Malesia",
+    "language": "ms%7Cta"
   },
   {
     "iso_3166_1": "MZ",
     "english_name": "Mozambique",
-    "native_name": "Mozambico"
+    "native_name": "Mozambico",
+    "language": "pt"
   },
   {
     "iso_3166_1": "NA",
@@ -782,7 +861,8 @@
   {
     "iso_3166_1": "NE",
     "english_name": "Niger",
-    "native_name": "Niger"
+    "native_name": "Niger",
+    "language": "ff%7Cfr%7Cha"
   },
   {
     "iso_3166_1": "NF",
@@ -792,22 +872,26 @@
   {
     "iso_3166_1": "NG",
     "english_name": "Nigeria",
-    "native_name": "Nigeria"
+    "native_name": "Nigeria",
+    "language": "en%7Cff%7Cha%7Cig%7Cyo"
   },
   {
     "iso_3166_1": "NI",
     "english_name": "Nicaragua",
-    "native_name": "Nicaragua"
+    "native_name": "Nicaragua",
+    "language": "es"
   },
   {
     "iso_3166_1": "NL",
     "english_name": "Netherlands",
-    "native_name": "Paesi Bassi"
+    "native_name": "Paesi Bassi",
+    "language": "nl"
   },
   {
     "iso_3166_1": "NO",
     "english_name": "Norway",
-    "native_name": "Norvegia"
+    "native_name": "Norvegia",
+    "language": "nb%7Cnn%7Cse"
   },
   {
     "iso_3166_1": "NP",
@@ -827,22 +911,26 @@
   {
     "iso_3166_1": "NZ",
     "english_name": "New Zealand",
-    "native_name": "Nuova Zelanda"
+    "native_name": "Nuova Zelanda",
+    "language": "en%7Cmi"
   },
   {
     "iso_3166_1": "OM",
     "english_name": "Oman",
-    "native_name": "Oman"
+    "native_name": "Oman",
+    "language": "ar"
   },
   {
     "iso_3166_1": "PA",
     "english_name": "Panama",
-    "native_name": "Panamá"
+    "native_name": "Panamá",
+    "language": "es"
   },
   {
     "iso_3166_1": "PE",
     "english_name": "Peru",
-    "native_name": "Perù"
+    "native_name": "Perù",
+    "language": "es%7Cqu"
   },
   {
     "iso_3166_1": "PF",
@@ -852,22 +940,26 @@
   {
     "iso_3166_1": "PG",
     "english_name": "Papua New Guinea",
-    "native_name": "Papua Nuova Guinea"
+    "native_name": "Papua Nuova Guinea",
+    "language": "en"
   },
   {
     "iso_3166_1": "PH",
     "english_name": "Philippines",
-    "native_name": "Filippine"
+    "native_name": "Filippine",
+    "language": "en"
   },
   {
     "iso_3166_1": "PK",
     "english_name": "Pakistan",
-    "native_name": "Pakistan"
+    "native_name": "Pakistan",
+    "language": "en%7Cps%7Cpa%7Csd%7Cur"
   },
   {
     "iso_3166_1": "PL",
     "english_name": "Poland",
-    "native_name": "Polonia"
+    "native_name": "Polonia",
+    "language": "pl"
   },
   {
     "iso_3166_1": "PM",
@@ -892,7 +984,8 @@
   {
     "iso_3166_1": "PT",
     "english_name": "Portugal",
-    "native_name": "Portogallo"
+    "native_name": "Portogallo",
+    "language": "pt"
   },
   {
     "iso_3166_1": "PW",
@@ -902,12 +995,14 @@
   {
     "iso_3166_1": "PY",
     "english_name": "Paraguay",
-    "native_name": "Paraguay"
+    "native_name": "Paraguay",
+    "language": "gn%7Ces"
   },
   {
     "iso_3166_1": "QA",
     "english_name": "Qatar",
-    "native_name": "Qatar"
+    "native_name": "Qatar",
+    "language": "ar"
   },
   {
     "iso_3166_1": "RE",
@@ -917,17 +1012,20 @@
   {
     "iso_3166_1": "RO",
     "english_name": "Romania",
-    "native_name": "Romania"
+    "native_name": "Romania",
+    "language": "ro"
   },
   {
     "iso_3166_1": "RS",
     "english_name": "Serbia",
-    "native_name": "Serbia"
+    "native_name": "Serbia",
+    "language": "sr"
   },
   {
     "iso_3166_1": "RU",
     "english_name": "Russia",
-    "native_name": "Federazione Russa"
+    "native_name": "Federazione Russa",
+    "language": "ru"
   },
   {
     "iso_3166_1": "RW",
@@ -937,7 +1035,8 @@
   {
     "iso_3166_1": "SA",
     "english_name": "Saudi Arabia",
-    "native_name": "Arabia Saudita"
+    "native_name": "Arabia Saudita",
+    "language": "ar"
   },
   {
     "iso_3166_1": "SB",
@@ -957,7 +1056,8 @@
   {
     "iso_3166_1": "SE",
     "english_name": "Sweden",
-    "native_name": "Svezia"
+    "native_name": "Svezia",
+    "language": "sv%7Cse"
   },
   {
     "iso_3166_1": "SG",
@@ -972,7 +1072,8 @@
   {
     "iso_3166_1": "SI",
     "english_name": "Slovenia",
-    "native_name": "Slovenia"
+    "native_name": "Slovenia",
+    "language": "sl"
   },
   {
     "iso_3166_1": "SJ",
@@ -982,7 +1083,8 @@
   {
     "iso_3166_1": "SK",
     "english_name": "Slovakia",
-    "native_name": "Slovacchia"
+    "native_name": "Slovacchia",
+    "language": "sk"
   },
   {
     "iso_3166_1": "SL",
@@ -997,7 +1099,8 @@
   {
     "iso_3166_1": "SN",
     "english_name": "Senegal",
-    "native_name": "Senegal"
+    "native_name": "Senegal",
+    "language": "fr%7Cff%7Cwo"
   },
   {
     "iso_3166_1": "SO",
@@ -1027,7 +1130,8 @@
   {
     "iso_3166_1": "SV",
     "english_name": "El Salvador",
-    "native_name": "El Salvador"
+    "native_name": "El Salvador",
+    "language": "es"
   },
   {
     "iso_3166_1": "SY",
@@ -1047,7 +1151,8 @@
   {
     "iso_3166_1": "TD",
     "english_name": "Chad",
-    "native_name": "Ciad"
+    "native_name": "Ciad",
+    "language": "ar%7Cfr"
   },
   {
     "iso_3166_1": "TF",
@@ -1062,7 +1167,8 @@
   {
     "iso_3166_1": "TH",
     "english_name": "Thailand",
-    "native_name": "Tailandia"
+    "native_name": "Tailandia",
+    "language": "th"
   },
   {
     "iso_3166_1": "TJ",
@@ -1087,7 +1193,8 @@
   {
     "iso_3166_1": "TN",
     "english_name": "Tunisia",
-    "native_name": "Tunisia"
+    "native_name": "Tunisia",
+    "language": "ar"
   },
   {
     "iso_3166_1": "TO",
@@ -1102,12 +1209,14 @@
   {
     "iso_3166_1": "TR",
     "english_name": "Turkey",
-    "native_name": "Turchia"
+    "native_name": "Turchia",
+    "language": "tr%7Cku"
   },
   {
     "iso_3166_1": "TT",
     "english_name": "Trinidad and Tobago",
-    "native_name": "Trinidad e Tobago"
+    "native_name": "Trinidad e Tobago",
+    "language": "en%7Ces"
   },
   {
     "iso_3166_1": "TV",
@@ -1117,22 +1226,26 @@
   {
     "iso_3166_1": "TW",
     "english_name": "Taiwan",
-    "native_name": "Taiwan"
+    "native_name": "Taiwan",
+    "language": "zh"
   },
   {
     "iso_3166_1": "TZ",
     "english_name": "Tanzania",
-    "native_name": "Tanzania"
+    "native_name": "Tanzania",
+    "language": "sw%7Cen"
   },
   {
     "iso_3166_1": "UA",
     "english_name": "Ukraine",
-    "native_name": "Ucraina"
+    "native_name": "Ucraina",
+    "language": "uk"
   },
   {
     "iso_3166_1": "UG",
     "english_name": "Uganda",
-    "native_name": "Uganda"
+    "native_name": "Uganda",
+    "language": "sw%7Cen%7Clg"
   },
   {
     "iso_3166_1": "UM",
@@ -1142,12 +1255,14 @@
   {
     "iso_3166_1": "US",
     "english_name": "United States of America",
-    "native_name": "Stati Uniti"
+    "native_name": "Stati Uniti",
+    "language": "en"
   },
   {
     "iso_3166_1": "UY",
     "english_name": "Uruguay",
-    "native_name": "Uruguay"
+    "native_name": "Uruguay",
+    "language": "es"
   },
   {
     "iso_3166_1": "UZ",
@@ -1167,7 +1282,8 @@
   {
     "iso_3166_1": "VE",
     "english_name": "Venezuela",
-    "native_name": "Venezuela"
+    "native_name": "Venezuela",
+    "language": "es"
   },
   {
     "iso_3166_1": "VG",
@@ -1217,12 +1333,14 @@
   {
     "iso_3166_1": "XK",
     "english_name": "Kosovo",
-    "native_name": "Kosovo"
+    "native_name": "Kosovo",
+    "language": "sq%7Csr"
   },
   {
     "iso_3166_1": "YE",
     "english_name": "Yemen",
-    "native_name": "Yemen"
+    "native_name": "Yemen",
+    "language": "ar"
   },
   {
     "iso_3166_1": "YT",
@@ -1237,12 +1355,14 @@
   {
     "iso_3166_1": "ZA",
     "english_name": "South Africa",
-    "native_name": "Sudafrica"
+    "native_name": "Sudafrica",
+    "language": "af%7Cen%7Cnr%7Cst%7Css%7Cts%7Ctn%7Cve%7Cxh%7Czu"
   },
   {
     "iso_3166_1": "ZM",
     "english_name": "Zambia",
-    "native_name": "Zambia"
+    "native_name": "Zambia",
+    "language": "en"
   },
   {
     "iso_3166_1": "ZR",
@@ -1252,6 +1372,7 @@
   {
     "iso_3166_1": "ZW",
     "english_name": "Zimbabwe",
-    "native_name": "Zimbabwe"
+    "native_name": "Zimbabwe",
+    "language": "en%7Cnd%7Csn"
   }
 ]
