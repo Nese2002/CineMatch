@@ -7,8 +7,8 @@
 // &with_watch_providers=18%2C27
 
 let moviesResponse;
-let castResponse;
-let detailsResponse;
+let castResponse = [];
+let detailsResponse = [];
 
 //Search Movies
 function searchMovies(query) {
@@ -34,14 +34,14 @@ function searchMovies(query) {
 
 //Get Cast
 //Get Cast
-function getCast(movieId) {
+function getCast(movieId, i) {
   return new Promise((resolve, reject) => {
     const xhr = new XMLHttpRequest();
 
     xhr.onreadystatechange = function () {
       if (xhr.readyState === 4) {
         if (xhr.status === 200) {
-          castResponse = JSON.parse(xhr.responseText);
+          castResponse[i] = JSON.parse(xhr.responseText);
           resolve();
         } else {
           reject("Error: " + xhr.status);
@@ -66,14 +66,14 @@ function getCast(movieId) {
 }
 
 //Get Details
-function getDetails(movieId) {
+function getDetails(movieId, i) {
   return new Promise((resolve, reject) => {
     const xhr = new XMLHttpRequest();
 
     xhr.onreadystatechange = function () {
       if (xhr.readyState === 4) {
         if (xhr.status === 200) {
-          detailsResponse = JSON.parse(xhr.responseText);
+          detailsResponse[i] = JSON.parse(xhr.responseText);
           resolve();
         } else {
           reject("Error: " + xhr.status);
@@ -100,16 +100,16 @@ function handleMovies(e) {
   if (e.target.readyState === 4 && e.target.status === 200) {
     moviesResponse = JSON.parse(e.target.responseText);
     let zonaDinamica = document.getElementById("zonaFilm");
-    console.log(moviesResponse["results"]);
     let promises = [];
 
     for (let i = 0; i < moviesResponse["results"].length; i++) {
       let movieId = moviesResponse["results"][i]["id"];
-      let promise = Promise.all([getCast(movieId), getDetails(movieId)])
+      let promise = Promise.all([getCast(movieId, i), getDetails(movieId, i)])
         .then(() => {
-          if (moviesResponse && castResponse && detailsResponse) {
+          if (moviesResponse && castResponse[i] && detailsResponse[i]) {
+            console.log("Movie: " + detailsResponse[i].title + " found");
+            console.log("Cast: ", castResponse[i]);
             createElement(i, zonaDinamica);
-            console.log("YEEE");
           }
         })
         .catch((error) => {
@@ -134,7 +134,7 @@ function handleCast(e) {
   return new Promise((resolve, reject) => {
     if (e.target.status === 200 && e.target.responseText !== "") {
       try {
-        castResponse = JSON.parse(e.target.responseText);
+        castResponse.push(JSON.parse(e.target.responseText));
         resolve();
       } catch (error) {
         reject("Error: Failed to parse cast response");
@@ -149,11 +149,8 @@ function handleCast(e) {
 function handleDetails(e) {
   return new Promise((resolve, reject) => {
     if (e.target.status === 200 && e.target.responseText !== "") {
-      console.log("responseText:", e.target.responseText);
-      console.log("response:", e.target.response);
       try {
-        detailsResponse = JSON.parse(e.target.responseText);
-        console.log(detailsResponse);
+        detailsResponse.push(JSON.parse(e.target.responseText));
         resolve();
       } catch (error) {
         reject("Error: Failed to parse details response");
@@ -171,7 +168,8 @@ function createElement(i, zonaDinamica) {
 
   // Create and append img
   let img = document.createElement("img");
-  img.src = "https://image.tmdb.org/t/p/w500/" + detailsResponse["poster_path"];
+  img.src =
+    "https://image.tmdb.org/t/p/w500/" + detailsResponse[i]["poster_path"];
   img.alt = "cover";
   img.className = "cover";
   container.appendChild(img);
@@ -199,15 +197,15 @@ function createElement(i, zonaDinamica) {
 
   // Create and append title, runtime, originCountry
   let h1 = document.createElement("h1");
-  h1.textContent = detailsResponse["title"];
+  h1.textContent = detailsResponse[i]["title"];
   flexContainer.appendChild(h1);
 
   let h3 = document.createElement("h3");
-  h3.textContent = detailsResponse["runtime"] + " min";
+  h3.textContent = detailsResponse[i]["runtime"] + " min";
   flexContainer.appendChild(h3);
 
   h3 = document.createElement("h3");
-  h3.textContent = detailsResponse["origin_country"][0];
+  h3.textContent = detailsResponse[i]["origin_country"][0];
   flexContainer.appendChild(h3);
 
   // Create and append flex-container
@@ -217,7 +215,7 @@ function createElement(i, zonaDinamica) {
 
   // Create and append rating
   h3 = document.createElement("h3");
-  let vote_average = detailsResponse["vote_average"];
+  let vote_average = detailsResponse[i]["vote_average"];
   vote_average = Math.floor(vote_average * 10) / 10;
   h3.textContent = vote_average;
   flexContainer.appendChild(h3);
@@ -233,7 +231,7 @@ function createElement(i, zonaDinamica) {
 
   // Create and append h3 for year
   h3 = document.createElement("h3");
-  h3.textContent = detailsResponse["release_date"].substring(0, 4);
+  h3.textContent = detailsResponse[i]["release_date"].substring(0, 4);
   subtitleDiv.appendChild(h3);
 
   // Create and append div for genres
@@ -241,9 +239,9 @@ function createElement(i, zonaDinamica) {
   subtitleDiv.appendChild(genreDiv);
 
   // Create and append h3 for each genre
-  for (let j = 0; j < detailsResponse["genres"].length; j++) {
+  for (let j = 0; j < detailsResponse[i]["genres"].length; j++) {
     h3 = document.createElement("h3");
-    h3.textContent = detailsResponse["genres"][j]["name"];
+    h3.textContent = detailsResponse[i]["genres"][j]["name"];
     genreDiv.appendChild(h3);
   }
 
@@ -276,7 +274,7 @@ function createElement(i, zonaDinamica) {
   castDiv.appendChild(castContainer);
 
   //Create cast element for each actor
-  for (let j = 0; j < castResponse["cast"].length && j < 15; j++) {
+  for (let j = 0; j < castResponse[i]["cast"].length && j < 15; j++) {
     // Create and append div
     let actorDiv = document.createElement("div");
     actorDiv.className = "relative";
@@ -286,13 +284,13 @@ function createElement(i, zonaDinamica) {
     let img = document.createElement("img");
     img.src =
       "https://image.tmdb.org/t/p/w500/" +
-      castResponse["cast"][j]["profile_path"];
+      castResponse[i]["cast"][j]["profile_path"];
     img.alt = "Profile Picture";
     actorDiv.appendChild(img);
 
     // Create and append h6 for actor name
     let h6 = document.createElement("h6");
-    h6.textContent = castResponse["cast"][j]["name"];
+    h6.textContent = castResponse[i]["cast"][j]["name"];
     actorDiv.appendChild(h6);
   }
   // Finally, append the main container to the body (or any other parent element)

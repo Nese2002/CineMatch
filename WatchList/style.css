@@ -1,0 +1,138 @@
+* {
+  font: inherit;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+body {
+  background: linear-gradient(135deg, #000000 0%, #041506 50%, #000000 100%);
+  font-family: system-ui, sans-serif;
+  font-size: 1.125rem; /* 18px */
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  padding: 0 5rem;
+  overflow: hidden;
+}
+
+i {
+  color: white;
+}
+
+.navbar {
+  margin: auto;
+  display: flex;
+  justify-content: center;
+}
+
+nav {
+  padding: 0.5rem 0;
+  position: relative;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.underline {
+  height: 0.1rem;
+  border-radius: 1rem;
+  width: 100%;
+  background-color: white;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  font-size: 1.5rem;
+  display: block;
+  padding: 0.25rem 1rem;
+  color: white;
+  text-decoration: none;
+  font-weight: medium;
+}
+
+h1 {
+  font-size: 3rem;
+  color: #ffffff;
+  font-family: "Rokkitt";
+  line-height: 1.75rem;
+}
+
+h2 {
+  font-size: 2rem;
+  color: #ffffff;
+  white-space: nowrap;
+  font-family: "Rokkitt";
+  margin-top: 2rem;
+  width: 100%;
+  text-align: left;
+}
+
+h3 {
+  font-size: 1.5rem;
+  color: #9999a2;
+  font-family: "Rokkitt";
+  line-height: 1rem;
+}
+
+p {
+  margin-top: 1rem;
+  font-size: 1.125rem;
+  color: white;
+  font-family: "Rokkitt";
+}
+
+/* --------------------------------
+
+Component 
+
+-------------------------------- */
+.hero {
+  margin-top: 3rem;
+}
+
+.inactive {
+  visibility: hidden;
+}
+
+.movie-element {
+  height: 6rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  transition: height 0.5s;
+}
+
+.line {
+  height: 0.1rem;
+  border-radius: 10rem;
+  width: 100%;
+  background-color: #ffffff;
+  pointer-events: none;
+}
+
+.movie-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  pointer-events: none;
+}
+.text {
+  margin-right: 1rem;
+  pointer-events: none;
+}
+.movie-details p {
+  display: none;
+}
+.cover {
+  width: auto;
+  height: 10rem;
+  object-fit: cover;
+  border-radius: 12px;
+  position: relative;
+  display: none;
+}
