@@ -17,42 +17,46 @@ function binarySearch(arr, x) {
 
   while (start <= end) {
       let mid = Math.floor((start + end) / 2);
-
-      if (arr[mid] === x) return mid;
-
+      if (arr[mid] === x) return true;
       else if (arr[mid] < x) 
            start = mid + 1;
-
       else
            end = mid - 1;
   }
 
-  return -1;
+  return false;
 }
 
 //Get Movies from database
 function getMovieId() {
-  const xhr = new XMLHttpRequest();
-  xhr.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-      watchedMovies = this.responseText.split(',').map(Number).sort((a, b) => a - b);
-    }
-  };
-  xhr.open("GET", "getMovieId.php", true);
-  xhr.send();
+  return new Promise((resolve, reject) => {
+    const xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+        watchedMovies = this.responseText.split(',').map(Number).sort((a, b) => a - b);
+        resolve(watchedMovies);
+      } else if (this.readyState == 4) {
+        reject(new Error('Failed to fetch movie ID'));
+      }
+    };
+    xhr.open("GET", "./php/getMovieId.php", true);
+    xhr.send();
+  });
 }
+
 
 //Search Movies
 function searchMovies(query) {
-  getMovieId();
   const data = null;
-
+  let vote_count = 100;
+  if(query.includes("&with_people"))
+    vote_count = 0;
   const xhr = new XMLHttpRequest();
   xhr.onreadystatechange = handleMovies;
 
   xhr.open(
     "GET",
-    "https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=it-IT&watch_region=IT&sort_by=vote_average.desc&vote_count.gte=500" +
+    "https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=it-IT&watch_region=IT&sort_by=vote_average.desc&vote_count.gte="+vote_count +
       query
   );
 
@@ -66,7 +70,7 @@ function searchMovies(query) {
 }
 
 //Get Cast
-//Get Cast
+
 function getCast(movieId, i) {
   return new Promise((resolve, reject) => {
     const xhr = new XMLHttpRequest();
@@ -129,16 +133,25 @@ function getDetails(movieId, i) {
 }
 
 //Handle Movies
-function handleMovies(e) {
+async function handleMovies(e) {
   if (e.target.readyState === 4 && e.target.status === 200) {
+    try {
+      const movieId = await getMovieId();
+      // Continue with the rest of your code
+    } catch (error) {
+      console.error('Failed to get movie ID:', error);
+    }
+
     moviesResponse = JSON.parse(e.target.responseText);
     let zonaDinamica = document.getElementById("zonaFilm");
     let watchedMovieOnThisPage = 0;
     // sessionStorage.setItem("total_pages", moviesResponse.total_pages);
     let promises = moviesResponse["results"].map(async (result, i) => {
       let movieId = result["id"];
-      if (binarySearch(watchedMovies, movieId) !== -1) return;
-      watchedMovieOnThisPage++;
+      if (binarySearch(watchedMovies, movieId)){ 
+        watchedMovieOnThisPage++;
+      }
+      else{
       return Promise.all([getCast(movieId, i), getDetails(movieId, i)])
         .then(() => {
           if (moviesResponse && castResponse[i] && detailsResponse[i]) {
@@ -148,21 +161,23 @@ function handleMovies(e) {
         .catch((error) => {
           console.error("Error:", error);
         });
+      }
     });
 
     Promise.all(promises)
       .then(() => {
         if (moviesResponse.page === 1)
           addMatchEventListener(
-            moviesResponse.total_pages,
-            moviesResponse.total_results
-          );
-        else {
-          updateContainers();
-        }
-        if(watchedMovieOnThisPage < 10){
-          loadNewMovies(true);
-        }
+        moviesResponse.total_pages,
+        moviesResponse.total_results
+      );
+      else {
+        updateContainers();
+      }
+      if(watchedMovieOnThisPage >= 10){
+        loadNewMovies(true);
+      }
+      updateCurrentContainer(watchedMovieOnThisPage)
       })
       .catch((error) => {
         console.error("Error:", error);

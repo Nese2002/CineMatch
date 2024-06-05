@@ -115,6 +115,12 @@ Component
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  opacity: 0;
+
+}
+
+.no-movies h1{
+  text-align: center;
 }
 
 .to-quiz {
@@ -130,9 +136,6 @@ Component
   transition: all 0.3s ease;
 }
 
-.no-movies {
-  opacity: 0;
-}
 
 .no-movies h3 {
   margin-top: 1rem;
@@ -550,7 +553,11 @@ h2{
   .text-container {
     justify-content: end;
     align-items: end;
+    padding: 1rem;
   }
+
+
+
   .cast {
     display: none;
   }
@@ -620,6 +627,7 @@ h2{
 
   .title-div h1{
     font-size: 2rem;
+    line-height: 1.5rem;
   }
   .title-div h3 {
     font-size: 1.25rem;
@@ -628,6 +636,10 @@ h2{
     margin-left: 1rem;
   }
   
+.subtitle-div  {
+  margin-top: 0.25rem;
+}
+
 .subtitle-div div h3 {
   margin-left: 0.5rem;
 }

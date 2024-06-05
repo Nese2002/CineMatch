@@ -17,7 +17,15 @@ body {
 }
 
 i {
-  color: white;
+  pointer-events: none;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 1.5rem;
+  font-weight: bold;
 }
 
 .navbar {
@@ -92,19 +100,69 @@ Component
 -------------------------------- */
 .hero {
   margin-top: 3rem;
+  overflow-y: scroll;
 }
+
+.hero::-webkit-scrollbar {
+  width: 0px;
+}
+
+.no-movies {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+}
+
+.no-movies h1{
+  text-align: center;
+}
+
+.to-quiz {
+  background-color: transparent;
+  position: relative;
+  z-index: 1;
+  border: 1px solid #ffffff;
+  color: white;
+  border-radius: 2rem;
+  padding: 1rem 1.5rem;
+  font-size: 2rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  pointer-events: all;
+}
+
+.no-movies h3 {
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+}
+
+.to-quiz:hover {
+  transform: scale(1.2);
+}
+
 
 .inactive {
   visibility: hidden;
 }
 
 .movie-element {
-  height: 6rem;
+  height: fit-content;
+  
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  transition: all 5s;
+}
 
-  transition: height 0.5s;
+.checked{
+  background-color: #004d04;
+  color: #43ff43;
+  transition: all 0.5s;
+  
 }
 
 .line {
@@ -120,6 +178,8 @@ Component
   justify-content: space-between;
   align-items: center;
   pointer-events: none;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
 }
 
 .movie-details h1 {
@@ -140,4 +200,30 @@ Component
   border-radius: 12px;
   position: relative;
   display: none;
+}
+.titolo{
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.check-button{
+  display: none;
+  transition: all 0.5s;
+  z-index: 10;
+  pointer-events: all;
+  position: relative;
+  color: white;
+}
+
+.check-button:hover{
+  transform: scale(1.1);
+  transition: all 0.5s;
+  color: #43ff43;
+  ;
+}
+
+@media (max-width: 1200px) {
+
+  
 }

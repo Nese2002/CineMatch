@@ -26,7 +26,7 @@ if ($result->num_rows > 0) {
   }
   echo implode(",", $movie_ids);
 } else {
-  echo "0 results";
+  echo "noResults";
 }
 $conn->close();
 ?>

@@ -44,7 +44,7 @@ textInput.addEventListener("input", function () {
 
 let form = document.getElementById("paese");
   var width = window.innerWidth <= 1024 ? window.innerWidth / 1.1: window.innerWidth / 2.5;
-    height = window.innerHeight <= 1024 ? window.innerHeight / 3 : window.innerHeight / 1.8;
+    height = window.innerWidth <= 1024 ? window.innerHeight / 3 : window.innerHeight / 2.3;
 
   // Create a new projection
   var projection = d3

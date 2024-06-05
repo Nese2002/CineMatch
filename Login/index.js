@@ -124,7 +124,7 @@ document.addEventListener("DOMContentLoaded", function () {
           signupMessage.innerText = "Registazione avvenuta con successo...";
           setTimeout(function () {
             window.location.href = "../Quiz/index.php";
-          }, 3000);
+          }, 1500);
 
           console.log("Signup successful");
         } else if (this.responseText.includes("username-error")) {

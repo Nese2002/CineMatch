@@ -32,7 +32,7 @@
       </a>
       <ul class="navbar">
         <li>
-          <a href="/">Quiz</a>
+          <a href="../Quiz/index.php">Quiz</a>
           <div class="underline"></div>
         </li>
 

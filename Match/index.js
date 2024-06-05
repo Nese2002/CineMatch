@@ -2,11 +2,11 @@ document.addEventListener("DOMContentLoaded", function () {
   let query = sessionStorage.getItem("query");
   searchMovies(query);
 
-  // Add click event listener for every container
+ 
 });
 
 let obj = {
-  current_container: 1,
+  current_container: 0,
   current_page: 1,
   total_pages: 0,
   cardContainer: null,
@@ -29,7 +29,9 @@ function addMatchEventListener(total_pages, total_containers) {
   loading.classList.remove("loading");
   loading.classList.add("loading-complete");
 
-  // Add horizontal scrolling to the cast div
+  // let cast = document.querySelector("#cast");
+
+  // // Add horizontal scrolling to the cast div
   // cast.addEventListener(
   //   "wheel",
   //   function (e) {
@@ -42,7 +44,6 @@ function addMatchEventListener(total_pages, total_containers) {
   //   { passive: false }
   // );
 
-  
   updateContainers();
   checkScreenWidth();
   window.addEventListener("resize", checkScreenWidth);
@@ -152,15 +153,12 @@ function restore(container) {
 // Check if the screen width is less than 1120px
 function checkScreenWidth() {
   let containers = document.querySelectorAll(".container");
-  console.log(containers);
   for (let container of containers) {
     restore(container);
     if (window.matchMedia("(max-width: 1120px)").matches) {
       container.classList.add("mobile");
-      console.log("mobile");
     } else {
       container.classList.remove("mobile");
-      console.log("not mobile");
     }
   }
 }
@@ -183,19 +181,8 @@ function loadNewMovies(fewMovies = false) {
     searchMovies(query);
   }
 
-  if (obj.current_container >= obj.total_containers) {
-    let backToQuiz = document.querySelector(".no-movies");
-    trashes = document.getElementsByName("trash");
-    loves = document.getElementsByName("love");
-    backToQuiz.style.opacity = 1;
-    trashes.forEach(function (trash) {
-      trash.style.display = "none";
-    });
-    loves.forEach(function (love) {
-      love.style.display = "none";
-    });
-  }
   obj.current_container++;
+  backToQuiz();
   // return { current_container, current_page };
 }
 
@@ -316,35 +303,61 @@ function updateContainers() {
     });
 
     // Add click event listener for every container
-    container.addEventListener("click", function () {
-      if (container.classList.contains("mobile")) {
-        // Toggle the class "gradient-clicked" of its child
-        let gradientDiv = container.querySelector("#gradient");
-        if (gradientDiv) {
-          gradientDiv.classList.toggle("gradient");
-          gradientDiv.classList.toggle("gradient-clicked");
-        }
-
-        // Toggle the class "clamp" from its p child
-        let pElement = container.querySelector("p");
-        if (pElement) {
-          pElement.style.transition = "all 3s ease";
-          pElement.classList.toggle("clamp");
-        }
-
-        // Toggle the class "visible-cast" of its child
-        let castDiv = container.querySelector("#cast");
-        if (castDiv) {
-          if (
-            castDiv.style.display === "none" ||
-            castDiv.style.display === ""
-          ) {
-            castDiv.style.display = "block";
-          } else {
-            castDiv.style.display = "none";
+    if (!container.hasAttribute('data-click-attached')) {
+      container.addEventListener("click", function () {
+        if (container.classList.contains("mobile")) {
+          console.log("clicked");
+          // Toggle the class "gradient-clicked" of its child
+          let gradientDiv = container.querySelector("#gradient");
+          if (gradientDiv) {
+            gradientDiv.classList.toggle("gradient");
+            gradientDiv.classList.toggle("gradient-clicked");
+          }
+    
+          // Toggle the class "clamp" from its p child
+          let pElement = container.querySelector("p");
+          if (pElement) {
+            pElement.style.transition = "all 3s ease";
+            pElement.classList.toggle("clamp");
+          }
+    
+          // Toggle the class "visible-cast" of its child
+          let castDiv = container.querySelector("#cast");
+          if (castDiv) {
+            if (
+              castDiv.style.display === "none" ||
+              castDiv.style.display === ""
+            ) {
+              castDiv.style.display = "block";
+            } else {
+              castDiv.style.display = "none";
+            }
           }
         }
-      }
-    });
+      });
+    
+      container.setAttribute('data-click-attached', 'true');
+    }
   });
+}
+
+function updateCurrentContainer(watchedMovieOnThisPage){
+  obj.current_container += watchedMovieOnThisPage;
+  console.log(typeof obj.current_container, typeof obj.total_containers, obj.current_container, obj.total_containers);
+  backToQuiz();
+}
+
+function backToQuiz(){
+  if (obj.current_container >= obj.total_containers) {
+    let backToQuiz = document.querySelector(".no-movies");
+    trashes = document.getElementsByName("trash");
+    loves = document.getElementsByName("love");
+    backToQuiz.style.opacity = 1;
+    trashes.forEach(function (trash) {
+      trash.style.display = "none";
+    });
+    loves.forEach(function (love) {
+      love.style.display = "none";
+    });
+  }
 }

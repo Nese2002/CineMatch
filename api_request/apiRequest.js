@@ -113,6 +113,7 @@ function handlePeople(e) {
     let zonaDinamica = document.getElementById("zonaAttori");
 
     for (let i = 0; i < response["results"].length; i++) {
+      if (response["results"][i]["known_for_department"] === "Acting") {
       // Create new elements
       let img = document.createElement("img");
       let label = document.createElement("label");
@@ -154,6 +155,8 @@ function handlePeople(e) {
       // Append the label to the parent element
       zonaDinamica.appendChild(label);
     }
+  }
+
   }
 }
 

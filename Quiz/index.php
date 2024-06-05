@@ -15,7 +15,7 @@
     <script src="https://unpkg.com/topojson@3"></script>
     <script src="../api_request/apiRequest.js"></script>
     <script src="./js/index.js"></script>
-    <script src="./js/"></script>
+    <script src="./js/inputNumber.js"></script>
     <script src="./js/map.js"></script>
     <script
       src="https://kit.fontawesome.com/7b5b8543ec.js"
@@ -26,7 +26,7 @@
     <nav>
       <ul class="navbar">
         <li>
-          <a href="/">Quiz</a>
+          <a href="./index.php">Quiz</a>
           <div class="underline"></div>
         </li>
 
@@ -39,7 +39,8 @@
     <section id="sectionFilter">
       <div class="center">
         <div class="">
-          <h2>Scegli i filtri per questa sera</h2>
+          <h2>SELEZIONA I FILTRI</h2>
+          <p>Utilizza i filtri per personalizzare la tua ricerca e scoprire titoli che rispecchiano i tuoi gusti!</p>
           <div class="underline"></div>
         </div>
 
@@ -73,7 +74,7 @@
             </label>
             <label class="checkbox-container">
               <input type="checkbox" id="Provider" />
-              <span class="checkbox-text">Dove vederlo</span>
+              <span class="checkbox-text">Piattaforme streaming</span>
             </label>
           </div>
           <div class="submit-button">
@@ -94,7 +95,8 @@
     <section class="hidden-section" id="sectionGenere">
       <div class="center">
         <div class="">
-          <h2>Che genere di film vuoi vedere?</h2>
+          <h2>GENERE</h2>
+          <p>Scegli il genere di film che rispecchia il tuo umore</p>
           <div class="underline"></div>
         </div>
         <div class="search-bar">
@@ -136,7 +138,8 @@
     <section class="hidden-section" id="sectionAnno">
       <div class="center">
         <div class="">
-          <h2>Quando è stato prodotto il film?</h2>
+          <h2>ANNO</h2>
+          <p>Seleziona l'anno di produzione per trovare film recenti o classici intramontaboli</p>
           <div class="underline"></div>
         </div>
         <form
@@ -177,7 +180,8 @@
     <section class="hidden-section" id="sectionPaese">
       <div class="end">
         <div class="">
-          <h2>Da quale paese proviene il film?</h2>
+          <h2>PAESE DI PRODUZIONE</h2>
+          <p>Seleziona una nazione ed immergiti in diverse culture cinematografiche</p>
           <div class="underline"></div>
         </div>
         <div class="search-bar">
@@ -224,7 +228,8 @@
     <section class="hidden-section" id="sectionCast">
       <div class="center">
         <div class="">
-          <h2>Quali attori vorresti vedere?</h2>
+          <h2>CAST</h2>
+          <p>Goditi le migliori performances dei tuoi attori preferiti</p>
           <div class="underline"></div>
         </div>
         <div class="search-bar">
@@ -265,7 +270,8 @@
     <section class="hidden-section" id="sectionDurata">
       <div class="center">
         <div class="">
-          <h2>Quanto minuti hai a disposizione?</h2>
+          <h2>DURATA</h2>
+          <p>Imposta la durata per trovare film che si adattano alla tuo tempo</p>
           <div class="underline"></div>
         </div>
         <form
@@ -300,7 +306,8 @@
     <section class="hidden-section" id="sectionProvider">
       <div class="center">
         <div class="">
-          <h2>Dove vuoi vedere il film?</h2>
+          <h2>PIATTAFORME STRAMING</h2>
+          <p>Seleziona la tua piattaforma preferita</p>
           <div class="underline"></div>
         </div>
         <div class="search-bar">
