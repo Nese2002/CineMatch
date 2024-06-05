@@ -135,6 +135,7 @@ document.addEventListener("DOMContentLoaded", function () {
   let submitFilters = document.getElementById("submitFilters");
   submitFilters.disabled = true;
 
+  
   formFilters.addEventListener("change", function (e) {
     var section = document.getElementById("section" + e.target.id);
 

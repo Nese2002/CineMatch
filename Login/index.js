@@ -4,10 +4,8 @@ document.addEventListener("DOMContentLoaded", function () {
   let filmText = document.querySelector(".film-text");
   let signupText = document.querySelector(".signup-text");
   let switchButtonMobile = document.getElementsByClassName("switch-mode");
-  let signupSection = document.getElementById("signupSection");
-  let loginSection = document.getElementById("loginSection");
 
-
+  //Switch between login and signup on mobile
   for (let i = 0; i < switchButtonMobile.length; i++) {
     switchButtonMobile[i].addEventListener("click", function () {
       const signupSection = document.getElementById('signupSection');
@@ -23,7 +21,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-
+  //Switch between login and signup on desktop
   switchButton.addEventListener("click", function () {
     if (loginPage.style.left === "0px") {
       loginPage.style.left = "50%";
@@ -50,8 +48,9 @@ document.addEventListener("DOMContentLoaded", function () {
     let username = loginUsername.value;
     let password = loginPassword.value;
 
-    event.preventDefault(); // Prevent the form from submitting normally
+    event.preventDefault(); 
 
+    //AJAX request
     let xhr = new XMLHttpRequest();
     xhr.open("POST", "php/login.php", true);
     xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
@@ -59,13 +58,10 @@ document.addEventListener("DOMContentLoaded", function () {
       if (this.readyState === 4 && this.status === 200) {
         if (this.responseText.includes("success")) {
           window.location.href = "../Quiz/index.php";
-          console.log("Login successful");
         } else if (this.responseText.includes("username-error")) {
-          console.log("Login failed: " + this.responseText);
           loginMessage.classList.add("error");
           loginMessage.innerText = "Username non trovato";
         } else {
-          console.log("Login failed: " + this.responseText);
           loginMessage.classList.add("error");
           loginMessage.innerText = "Password errata";
         }
@@ -77,10 +73,9 @@ document.addEventListener("DOMContentLoaded", function () {
         "&password=" +
         encodeURIComponent(password)
     );
-    console.log("Username: " + username);
-    console.log("Password: " + password);
   });
 
+  //Check the input fields
   loginForm.addEventListener("change", function (event) {
     if (loginMessage.classList.contains("error")) {
       loginMessage.classList.remove("error");
@@ -88,7 +83,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (loginUsername.value !== "") {
       loginUsernameLabel.classList.add("valid");
-      console.log("YEEEE");
     } else if (loginUsernameLabel.classList.contains("valid")) {
       loginUsernameLabel.classList.remove("valid");
     }
@@ -112,8 +106,9 @@ document.addEventListener("DOMContentLoaded", function () {
     let username = signupUsername.value;
     let password = signupPassword.value;
 
-    event.preventDefault(); // Prevent the form from submitting normally
+    event.preventDefault();
 
+    //AJAX request
     let xhr = new XMLHttpRequest();
     xhr.open("POST", "php/signup.php", true);
     xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
@@ -126,13 +121,10 @@ document.addEventListener("DOMContentLoaded", function () {
             window.location.href = "../Quiz/index.php";
           }, 1500);
 
-          console.log("Signup successful");
         } else if (this.responseText.includes("username-error")) {
-          console.log("Signup failed: " + this.responseText);
           signupMessage.classList.add("error");
           signupMessage.innerText = "Username già in uso";
         } else {
-          console.log("Signup failed: " + this.responseText);
           signupMessage.classList.add("error");
           signupMessage.innerText =
             "Inserire una password di almeno 6 caratteri";
@@ -148,6 +140,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   });
 
+  //Check the input fields
   signupForm.addEventListener("change", function (event) {
     if (signupMessage.classList.contains("error")) {
       signupMessage.classList.remove("error");
@@ -166,27 +159,3 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
-
-// function validateLoginForm() {
-//   let username = document.forms["login"]["username"];
-//   let password = document.forms["login"]["password"];
-//   let message = document.getElementById("loginMessage");
-
-//   if (username.value === "" || password.value === "") {
-//     message.classList.add("error");
-//     return false;
-//   }
-//   return true;
-// }
-
-// function validateSignupForm() {
-//   let username = document.forms["signup"]["username"];
-//   let password = document.forms["signup"]["password"];
-//   let message = document.getElementById("signupMessage");
-
-//   if (username.value === "" || password.value === "") {
-//     message.classList.add("error");
-//     return false;
-//   }
-//   return true;
-// }

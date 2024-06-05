@@ -84,24 +84,21 @@ function handleGenres(e) {
     const response = JSON.parse(e.target.responseText);
     let zonaDinamica = document.getElementById("zonaGenere");
 
+    // Create dinamically the checkboxes
     for (let i = 0; i < response["genres"].length; i++) {
-      // Create new elements
       let label = document.createElement("label");
       let input = document.createElement("input");
       let span = document.createElement("span");
 
-      // Set their properties
       label.setAttribute("class", "checkbox-container");
       input.setAttribute("type", "checkbox");
       input.setAttribute("id", response["genres"][i]["id"]);
       span.setAttribute("class", "checkbox-text");
       span.textContent = response["genres"][i]["name"];
 
-      // Append the input and span to the label
       label.appendChild(input);
       label.appendChild(span);
 
-      // Append the label to the parent element
       zonaDinamica.appendChild(label);
     }
   }
@@ -112,9 +109,10 @@ function handlePeople(e) {
     const response = JSON.parse(e.target.responseText);
     let zonaDinamica = document.getElementById("zonaAttori");
 
+    // Create dinamically the checkboxes
     for (let i = 0; i < response["results"].length; i++) {
       if (response["results"][i]["known_for_department"] === "Acting") {
-      // Create new elements
+
       let img = document.createElement("img");
       let label = document.createElement("label");
       let input = document.createElement("input");
@@ -123,7 +121,6 @@ function handlePeople(e) {
       let ruolo = document.createElement("span");
       let textDiv = document.createElement("div");
 
-      // Set their properties
       if (response["results"][i]["profile_path"] == null) {
         img.setAttribute("src", "./assets/noImage.jpg");
       } else {
@@ -144,7 +141,6 @@ function handlePeople(e) {
       ruolo.textContent = response["results"][i]["known_for_department"];
       textDiv.setAttribute("class", "text-div");
 
-      // Append the input and span to the label
       label.appendChild(input);
       label.appendChild(div);
       div.appendChild(img);
@@ -152,7 +148,6 @@ function handlePeople(e) {
       textDiv.appendChild(nome);
       textDiv.appendChild(ruolo);
 
-      // Append the label to the parent element
       zonaDinamica.appendChild(label);
     }
   }
@@ -164,13 +159,13 @@ function handleProviders(e) {
   if (e.target.readyState === 4 && e.target.status === 200) {
     const response = JSON.parse(e.target.responseText);
     let zonaDinamica = document.getElementById("zonaProvider");
+
+    // Create dinamically the checkboxes
     for (let i = 0; i < response["results"].length; i++) {
-      // Create new elements
       let label = document.createElement("label");
       let input = document.createElement("input");
       let img = document.createElement("img");
 
-      // Set their properties
       label.setAttribute("class", "checkbox-container");
       input.setAttribute("type", "checkbox");
       label.setAttribute("id", response["results"][i]["provider_name"]);
@@ -181,112 +176,10 @@ function handleProviders(e) {
         "https://image.tmdb.org/t/p/w500" + response["results"][i]["logo_path"]
       );
 
-      // Append the input and span to the label
       label.appendChild(input);
       label.appendChild(img);
 
-      // Append the label to the parent element
       zonaDinamica.appendChild(label);
     }
-  }
-}
-
-function handleMovies(e) {
-  if (e.target.readyState === 4 && e.target.status === 200) {
-    const response = JSON.parse(e.target.responseText);
-    console.log(response);
-    let zonaDinamica = document.getElementById("zonaFilm");
-    zonaDinamica.innerHTML = "";
-    for (let i = 0; i < response["results"].length; i++) {
-      // Create main container
-      let container = document.createElement("div");
-      container.className = "container";
-
-      // Create and append img
-      let img = document.createElement("img");
-      img.src =
-        "https://image.tmdb.org/t/p/w500/" +
-        response["results"][i]["poster_path"];
-      img.alt = "cover";
-      img.className = "cover";
-      container.appendChild(img);
-
-      // Create and append gradient div
-      let gradient = document.createElement("div");
-      gradient.id = "gradient";
-      gradient.className = "gradient";
-      container.appendChild(gradient);
-
-      // Create and append text-container
-      let textContainer = document.createElement("div");
-      textContainer.className = "text-container";
-      container.appendChild(textContainer);
-
-      // Create and append title-div
-      let titleDiv = document.createElement("div");
-      titleDiv.className = "title-div";
-      textContainer.appendChild(titleDiv);
-
-      // Create and append flex-container
-      let flexContainer = document.createElement("div");
-      flexContainer.className = "flex-container";
-      titleDiv.appendChild(flexContainer);
-
-      // Create and append h1, h3, h3
-      let h1 = document.createElement("h1");
-      h1.textContent = response["results"][i]["title"];
-      flexContainer.appendChild(h1);
-
-      let h3 = document.createElement("h3");
-      h3.textContent = response["results"][i]["release_date"];
-      flexContainer.appendChild(h3);
-
-      h3 = document.createElement("h3");
-      h3.textContent = "Korea";
-      flexContainer.appendChild(h3);
-
-      // ... continue for the rest of the elements
-
-      // Finally, append the main container to the body (or any other parent element)
-      zonaDinamica.appendChild(container);
-    }
-    // let zonaDinamica = document.getElementById("zonaFilm");
-    // zonaDinamica.innerHTML = "";
-    // for (let i = 0; i < response["results"].length; i++) {
-    //   // Create new elements
-    //   let img = document.createElement("img");
-    //   let div = document.createElement("div");
-    //   let title = document.createElement("span");
-    //   let vote = document.createElement("span");
-    //   let overview = document.createElement("span");
-    //   let textDiv = document.createElement("div");
-
-    //   // Set their properties
-    //   if(response["results"][i]["poster_path"] == null){
-    //     img.setAttribute("src", "./assets/noImage.jpg");
-    //   }
-    //   else{
-    //     img.setAttribute("src", "https://image.tmdb.org/t/p/w500" + response["results"][i]["poster_path"]);
-    //   }
-    //   img.setAttribute("class", "movie-img");
-    //   div.setAttribute("class", "movie-container");
-    //   title.setAttribute("class", "movie-text");
-    //   title.textContent = response["results"][i]["title"];
-    //   vote.setAttribute("class", "vote-text");
-    //   vote.textContent = "Voto: " + response["results"][i]["vote_average"];
-    //   overview.setAttribute("class", "overview-text");
-    //   overview.textContent = response["results"][i]["overview"];
-    //   textDiv.setAttribute("class", "text-div");
-
-    //   // Append the input and span to the label
-    //   div.appendChild(img);
-    //   div.appendChild(textDiv);
-    //   textDiv.appendChild(title);
-    //   textDiv.appendChild(vote);
-    //   textDiv.appendChild(overview);
-
-    //   // Append the label to the parent element
-    //   zonaDinamica.appendChild(div);
-    // }
   }
 }

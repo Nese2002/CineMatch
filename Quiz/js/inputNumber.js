@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
   var maxInput = document.getElementById("maxNumberInput");
 
 
-
+  
   minInput.addEventListener("blur", ()=>{
     if (minInput.value < 1950 || minInput.value === "") {
       minInput.value = 1950;

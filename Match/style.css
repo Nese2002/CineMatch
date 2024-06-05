@@ -197,7 +197,7 @@ Component
 .submit-button {
   display: flex;
   justify-content: center;
-  margin-top: 1rem; /*3rem*/
+  margin-top: 1rem; 
 }
 .submit-relative {
   position: relative;
@@ -386,7 +386,7 @@ Component
 .cast::-webkit-scrollbar-thumb {
   pointer-events: auto;
   cursor: pointer;
-  background: #ffffff; /* Color of the scroll thumb */
+  background: #ffffff;
 }
 .cast .grid {
   display: flex;
@@ -428,7 +428,6 @@ Component
   display: none;
 }
 
-/*Tinder components*/
 
 .card-status {
   pointer-events: none;

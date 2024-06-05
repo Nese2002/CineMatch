@@ -1,8 +1,7 @@
+// Call the searchMovies function when the page is loaded
 document.addEventListener("DOMContentLoaded", function () {
   let query = sessionStorage.getItem("query");
   searchMovies(query);
-
- 
 });
 
 let obj = {
@@ -13,6 +12,7 @@ let obj = {
   total_containers: 0,
 };
 
+// Prepare the page when the searchMovies function is called for the first time
 function addMatchEventListener(total_pages, total_containers) {
   let trashes, loves, hero, loading;
   obj.total_pages = total_pages;
@@ -29,25 +29,11 @@ function addMatchEventListener(total_pages, total_containers) {
   loading.classList.remove("loading");
   loading.classList.add("loading-complete");
 
-  // let cast = document.querySelector("#cast");
-
-  // // Add horizontal scrolling to the cast div
-  // cast.addEventListener(
-  //   "wheel",
-  //   function (e) {
-  //     // Prevent the default vertical scrolling
-  //     e.preventDefault();
-
-  //     // Scroll horizontally instead
-  //     cast.scrollLeft += e.deltaY;
-  //   },
-  //   { passive: false }
-  // );
-
   updateContainers();
   checkScreenWidth();
   window.addEventListener("resize", checkScreenWidth);
-  // Add click event listener for trash and love buttons
+  
+  // Add click event listener for trash buttons
   trashes.forEach(function (trash) {
     trash.addEventListener("click", function () {
       let cards = document.querySelectorAll(".container:not(.removed)");
@@ -61,32 +47,33 @@ function addMatchEventListener(total_pages, total_containers) {
       currentCard.classList.add("removed");
       currentCard.style.transform =
         "translate(" + moveOutWidth + "px, -100px) rotate(30deg)";
-           // Query verso il database
-  let imgElement = currentCard.querySelector('img.cover');
-  let h1Element = currentCard.querySelector('h1');
-  let pElement = currentCard.querySelector('p');
+       
+      let imgElement = currentCard.querySelector('img.cover');
+      let h1Element = currentCard.querySelector('h1');
+      let pElement = currentCard.querySelector('p');
 
-  let imgSrc = imgElement ? imgElement.src : '';
-  let h1Text = h1Element ? h1Element.textContent : '';
-  let pText = pElement ? pElement.textContent : '';
-  let movieId = currentCard.id;      
+      let imgSrc = imgElement ? imgElement.src : '';
+      let h1Text = h1Element ? h1Element.textContent : '';
+      let pText = pElement ? pElement.textContent : '';
+      let movieId = currentCard.id;      
 
-  let data = {
-    direction:  'right',
-    imgSrc: imgSrc,
-    h1Text: h1Text,
-    pText: pText,
-    movieId: movieId
-  };
+      let data = {
+        direction:  'right',
+        imgSrc: imgSrc,
+        h1Text: h1Text,
+        pText: pText,
+        movieId: movieId
+      };
 
-  let xhr = new XMLHttpRequest();
-  xhr.open('POST', './php/addToWatchlist.php', true);
-  xhr.setRequestHeader('Content-Type', 'application/json');
-  xhr.send(JSON.stringify(data));
-      initCards();
+      let xhr = new XMLHttpRequest();
+      xhr.open('POST', './php/addToWatchlist.php', true);
+      xhr.setRequestHeader('Content-Type', 'application/json');
+      xhr.send(JSON.stringify(data));
+          initCards();
+      });
     });
-  });
 
+  // Add click event listener for love buttons
   loves.forEach(function (love) {
     love.addEventListener("click", function () {
       let cards = document.querySelectorAll(".container:not(.removed)");
@@ -100,33 +87,34 @@ function addMatchEventListener(total_pages, total_containers) {
       currentCard.classList.add("removed");
       currentCard.style.transform =
         "translate(-" + moveOutWidth + "px, -100px) rotate(-30deg)";
-        // Query verso il database
-  let imgElement = currentCard.querySelector('img.cover');
-  let h1Element = currentCard.querySelector('h1');
-  let pElement = currentCard.querySelector('p');
 
-  let imgSrc = imgElement ? imgElement.src : '';
-  let h1Text = h1Element ? h1Element.textContent : '';
-  let pText = pElement ? pElement.textContent : '';
-  let movieId = currentCard.id;      
+      let imgElement = currentCard.querySelector('img.cover');
+      let h1Element = currentCard.querySelector('h1');
+      let pElement = currentCard.querySelector('p');
 
-  let data = {
-    direction: 'left',
-    imgSrc: imgSrc,
-    h1Text: h1Text,
-    pText: pText,
-    movieId: movieId
-  };
-  
-  let xhr = new XMLHttpRequest();
-  xhr.open('POST', './php/addToWatchlist.php', true);
-  xhr.setRequestHeader('Content-Type', 'application/json');
-  xhr.send(JSON.stringify(data));
-      initCards();
+      let imgSrc = imgElement ? imgElement.src : '';
+      let h1Text = h1Element ? h1Element.textContent : '';
+      let pText = pElement ? pElement.textContent : '';
+      let movieId = currentCard.id;      
+
+      let data = {
+        direction: 'left',
+        imgSrc: imgSrc,
+        h1Text: h1Text,
+        pText: pText,
+        movieId: movieId
+      };
+      
+      let xhr = new XMLHttpRequest();
+      xhr.open('POST', './php/addToWatchlist.php', true);
+      xhr.setRequestHeader('Content-Type', 'application/json');
+      xhr.send(JSON.stringify(data));
+          initCards();
     });
   });
 }
 
+// Restore the container to its original state when the screen width changes
 function restore(container) {
   let gradientDiv = container.querySelector("#gradient");
   let pElement = container.querySelector("p");
@@ -165,14 +153,7 @@ function checkScreenWidth() {
 
 //Load new movies
 function loadNewMovies(fewMovies = false) {
-  console.log(
-    "currentPage=" +
-      obj.current_page +
-      " obj.total_pages=" +
-      obj.total_pages +
-      " current_container=" +
-      obj.current_container
-  );
+  
   if ((obj.current_page < obj.total_pages && obj.current_container % 10 === 0) ||(obj.current_page < obj.total_pages && fewMovies) ) {
     obj.current_page++;
 
@@ -183,7 +164,6 @@ function loadNewMovies(fewMovies = false) {
 
   obj.current_container++;
   backToQuiz();
-  // return { current_container, current_page };
 }
 
 // Initialize the cards
@@ -207,13 +187,15 @@ function initCards() {
 function updateContainers() {
   initCards();
   checkScreenWidth();
+
   //use Hammer.js to add swipe functionality to the cards
   newCards.forEach(function (container) {
     let hammertime = new Hammer(container);
 
+    // Add pan event listener for every container
     hammertime.on("pan", function (event) {
       if (event.target !== newCards[0]) {
-        return; // If it was, exit the function
+        return; 
       }
       container.classList.add("moving");
       if (event.deltaX === 0) return;
@@ -236,9 +218,10 @@ function updateContainers() {
         "deg)";
     });
 
+    // Add panend event listener for every container
     hammertime.on("panend", function (event) {
       if (event.target !== newCards[0]) {
-        return; // If it was, exit the function
+        return; 
       }
       container.classList.remove("moving");
       obj.cardContainer.classList.remove("love");
@@ -254,8 +237,6 @@ function updateContainers() {
         event.target.style.transform = "";
       } else {
         loadNewMovies();
-        // current_container = result.current_container;
-        // current_page = result.current_page;
 
         let endX = Math.max(
           Math.abs(event.velocityX) * moveOutWidth,
@@ -276,28 +257,28 @@ function updateContainers() {
           "px) rotate(" +
           rotate +
           "deg)";
-          // Query verso il database
-  let imgElement = container.querySelector('img.cover');
-  let h1Element = container.querySelector('h1');
-  let pElement = container.querySelector('p');
+          
+        let imgElement = container.querySelector('img.cover');
+        let h1Element = container.querySelector('h1');
+        let pElement = container.querySelector('p');
 
-  let imgSrc = imgElement ? imgElement.src : '';
-  let h1Text = h1Element ? h1Element.textContent : '';
-  let pText = pElement ? pElement.textContent : '';
-  let movieId = container.id;      
+        let imgSrc = imgElement ? imgElement.src : '';
+        let h1Text = h1Element ? h1Element.textContent : '';
+        let pText = pElement ? pElement.textContent : '';
+        let movieId = container.id;      
 
-  let data = {
-    direction: event.deltaX < 0 ? 'left' : 'right',
-    imgSrc: imgSrc,
-    h1Text: h1Text,
-    pText: pText,
-    movieId: movieId
-  };
+        let data = {
+          direction: event.deltaX < 0 ? 'left' : 'right',
+          imgSrc: imgSrc,
+          h1Text: h1Text,
+          pText: pText,
+          movieId: movieId
+        };
 
-  let xhr = new XMLHttpRequest();
-  xhr.open('POST', './php/addToWatchlist.php', true);
-  xhr.setRequestHeader('Content-Type', 'application/json');
-  xhr.send(JSON.stringify(data));
+        let xhr = new XMLHttpRequest();
+        xhr.open('POST', './php/addToWatchlist.php', true);
+        xhr.setRequestHeader('Content-Type', 'application/json');
+        xhr.send(JSON.stringify(data));
         initCards();
       }
     });
@@ -306,22 +287,20 @@ function updateContainers() {
     if (!container.hasAttribute('data-click-attached')) {
       container.addEventListener("click", function () {
         if (container.classList.contains("mobile")) {
-          console.log("clicked");
-          // Toggle the class "gradient-clicked" of its child
+          
+
           let gradientDiv = container.querySelector("#gradient");
           if (gradientDiv) {
             gradientDiv.classList.toggle("gradient");
             gradientDiv.classList.toggle("gradient-clicked");
           }
     
-          // Toggle the class "clamp" from its p child
           let pElement = container.querySelector("p");
           if (pElement) {
             pElement.style.transition = "all 3s ease";
             pElement.classList.toggle("clamp");
           }
     
-          // Toggle the class "visible-cast" of its child
           let castDiv = container.querySelector("#cast");
           if (castDiv) {
             if (
@@ -336,17 +315,19 @@ function updateContainers() {
         }
       });
     
+      // Add attribute to the container to prevent multiple click event listeners
       container.setAttribute('data-click-attached', 'true');
     }
   });
 }
 
+// add the movie in the watchlist to the current container number
 function updateCurrentContainer(watchedMovieOnThisPage){
   obj.current_container += watchedMovieOnThisPage;
-  console.log(typeof obj.current_container, typeof obj.total_containers, obj.current_container, obj.total_containers);
   backToQuiz();
 }
 
+// Show the "No movies" message when the user has watched all the movies
 function backToQuiz(){
   if (obj.current_container >= obj.total_containers) {
     let backToQuiz = document.querySelector(".no-movies");

@@ -5,6 +5,7 @@ async function fetchData() {
   return data;
 }
 
+// Populate the list of countries
 function populateList() {
 let zonaDinamica = document.getElementById("zonaPaese");
  fetchData().then(data => {
@@ -28,6 +29,8 @@ let zonaDinamica = document.getElementById("zonaPaese");
 window.onload = populateList;
 
 let textInput = document.querySelector("#mapSearch");
+
+// Filter the list of countries
 textInput.addEventListener("input", function () {
   let searchText = textInput.value;
   let spans = document.querySelectorAll("#zonaPaese span");
@@ -46,33 +49,27 @@ let form = document.getElementById("paese");
   var width = window.innerWidth <= 1024 ? window.innerWidth / 1.1: window.innerWidth / 2.5;
     height = window.innerWidth <= 1024 ? window.innerHeight / 3 : window.innerHeight / 2.3;
 
-  // Create a new projection
+  // Create the map
   var projection = d3
     .geoMercator()
     .scale(width / 2 / Math.PI)
     .translate([width / 2, height / 1.5]);
 
-  // Create a new geographic path generator
   var path = d3.geoPath().projection(projection);
 
-  // Create the SVG element
   var svg = d3.select("#map").attr("width", width).attr("height", height);
 
-var zoom = d3.zoom().scaleExtent([0.5, 20]).on("zoom", zoomed);
+  var zoom = d3.zoom().scaleExtent([0.5, 20]).on("zoom", zoomed);
 
-// The zoom behavior is added to the svg
-svg.call(zoom);
+  svg.call(zoom);
 
-// The zoomed function
-function zoomed() {
-  svg
-    .selectAll("path") // To prevent stroke width from scaling
-    .attr("transform", d3.event.transform);
-}
+  function zoomed() {
+    svg
+      .selectAll("path") // To prevent stroke width from scaling
+      .attr("transform", d3.event.transform);
+  }
 
-
-  // Load the GeoJSON data
-  // Load the GeoJSON data
+  // Load the map from the json file
   d3.json("./jsonFiles/country.json")
     .then(function (world) {
 
@@ -90,15 +87,12 @@ function zoomed() {
         .on("mouseout", function (d) {
           let checkbox = document.getElementById(d.id);
           if (checkbox && checkbox.checked) {
-            // Do something when the checkbox is selected
             d3.select(this).attr("fill", "#0FD91D");
           } else {
-            // Do something else when the checkbox is not selected
-            d3.select(this).attr("fill", "#042608"); // replace with the original color
+            d3.select(this).attr("fill", "#042608"); 
           }
         })
         .on("click", function (d) {
-          // alert("You clicked on " + d.id);
           let checkbox = document.getElementById(d.id);
           if (checkbox && !checkbox.checked) {
             checkbox.checked = true;

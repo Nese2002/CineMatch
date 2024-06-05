@@ -2,12 +2,12 @@
 session_start();
 $user_id = $_SESSION['user_id'];
 
+// Create connection
 $servername = "localhost";
 $username = "root";
 $password = "";
 $dbname = "cinedata";
 
-// Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
 
 // Check connection
@@ -19,8 +19,8 @@ $sql = "SELECT movie_id FROM watchlist WHERE user_id = $user_id UNION SELECT mov
 $result = $conn->query($sql);
 
 $movie_ids = array();
+// return the movie ids as a comma separated string
 if ($result->num_rows > 0) {
-  // output data of each row
   while($row = $result->fetch_assoc()) {
     $movie_ids[] = $row["movie_id"];
   }

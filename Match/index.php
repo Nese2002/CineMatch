@@ -1,7 +1,7 @@
 <?php
-  session_start(); // inizia la sessione
-  if(!isset($_SESSION['user_id'])) { // se la sessione non è stata inizializzata
-    header("Location: ../Login/index.html"); // reindirizza l'utente alla pagina di login
+  session_start(); 
+  if(!isset($_SESSION['user_id'])) { 
+    header("Location: ../Login/index.html"); 
     exit();
   }
 ?>

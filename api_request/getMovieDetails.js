@@ -1,4 +1,4 @@
-//Search Movies By Filters
+//OUR FILTERS
 // &with_genres=18%2C27
 // &release_date.gte=1950-01-01&release_date.lte=2024-12-31
 // &with_origin_country=18
@@ -70,7 +70,6 @@ function searchMovies(query) {
 }
 
 //Get Cast
-
 function getCast(movieId, i) {
   return new Promise((resolve, reject) => {
     const xhr = new XMLHttpRequest();
@@ -137,7 +136,6 @@ async function handleMovies(e) {
   if (e.target.readyState === 4 && e.target.status === 200) {
     try {
       const movieId = await getMovieId();
-      // Continue with the rest of your code
     } catch (error) {
       console.error('Failed to get movie ID:', error);
     }
@@ -145,13 +143,15 @@ async function handleMovies(e) {
     moviesResponse = JSON.parse(e.target.responseText);
     let zonaDinamica = document.getElementById("zonaFilm");
     let watchedMovieOnThisPage = 0;
-    // sessionStorage.setItem("total_pages", moviesResponse.total_pages);
     let promises = moviesResponse["results"].map(async (result, i) => {
       let movieId = result["id"];
+
+      //Check if the movie is already in the database
       if (binarySearch(watchedMovies, movieId)){ 
         watchedMovieOnThisPage++;
       }
       else{
+      //Get Cast and Details for each movie
       return Promise.all([getCast(movieId, i), getDetails(movieId, i)])
         .then(() => {
           if (moviesResponse && castResponse[i] && detailsResponse[i]) {
@@ -346,6 +346,6 @@ function createElement(i, zonaDinamica) {
     h6.textContent = castResponse[i]["cast"][j]["name"];
     actorDiv.appendChild(h6);
   }
-  // Finally, append the main container to the body (or any other parent element)
+  // Append the main container to the body (or any other parent element)
   zonaDinamica.appendChild(container);
 }

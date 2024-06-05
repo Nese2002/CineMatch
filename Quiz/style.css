@@ -8,7 +8,7 @@
 body {
   background: linear-gradient(135deg, #000000 0%, #013501 50%, #000000 100%);
   font-family: system-ui, sans-serif;
-  font-size: 1.125rem; /* 18px */
+  font-size: 1.125rem; 
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -19,7 +19,7 @@ body {
 
 section {
   font-family: system-ui, sans-serif;
-  font-size: 1.125rem; /* 18px */
+  font-size: 1.125rem; 
   display: flex;
   flex-direction: column;
   height: 100vh;
@@ -90,10 +90,9 @@ select {
 }
 
 select option:checked {
-  background-color: #ff0000; /* Change this to the color you want */
+  background-color: #ff0000; 
 }
 
-/* This will change the scrollbar track */
 select::-webkit-scrollbar {
   width: 10px;
 }
@@ -103,13 +102,12 @@ select::-webkit-scrollbar-track {
   border-radius: 10px;
 }
 
-/* This will change the scrollbar handle */
 select::-webkit-scrollbar-thumb {
   background: #888;
   border-radius: 10px;
 }
 
-/* Change the scrollbar handle on hover */
+
 select::-webkit-scrollbar-thumb:hover {
   background: #555;
 }
@@ -126,7 +124,7 @@ Component
 
 .hidden-section {
   font-family: system-ui, sans-serif;
-  font-size: 1.125rem; /* 18px */
+  font-size: 1.125rem; 
   display: flex;
   flex-direction: column;
   height: 100vh;
@@ -186,12 +184,12 @@ Component
   align-items: center;
   width: 100%;
 }
-/* Hide the default checkbox */
+
 .checkbox-container input[type="checkbox"] {
   display: none;
 }
 
-/* Create a custom checkbox */
+
 .checkbox-container input[type="checkbox"] + .checkbox-text {
   position: relative;
   border-radius: 15px;
@@ -206,7 +204,7 @@ Component
 .submit-button {
   display: flex;
   justify-content: center;
-  margin-top: 1rem; /*3rem*/
+  margin-top: 1rem; 
 }
 .submit-relative {
   position: relative;
@@ -343,7 +341,7 @@ Component
 }
 
 .gridGenere::-webkit-scrollbar-thumb {
-  background: #ffffff; /* Color of the scroll thumb */
+  background: #ffffff;
 }
 
 .select-paese{
@@ -373,7 +371,7 @@ Component
 }
 
 .gridPaese::-webkit-scrollbar-thumb {
-  background: #ffffff; /* Color of the scroll thumb */
+  background: #ffffff; 
 }
 
 
@@ -451,7 +449,6 @@ input[type="number"]:focus {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-/*CAST*/
 
 .form-attori{
 width: fit-content;
@@ -479,7 +476,7 @@ padding-right: 1rem;
 }
 
 .actor-grid::-webkit-scrollbar-thumb {
-  background: #ffffff; /* Color of the scroll thumb */
+  background: #ffffff; 
 }
 
 
@@ -489,12 +486,11 @@ padding-right: 1rem;
   align-items: center;
   position: relative;
 }
-/* Hide the default checkbox */
+
 .actor-container input[type="checkbox"] {
   display: none;
 }
 
-/* Create a custom checkbox */
 .actor-container input[type="checkbox"] + .actor-checkbox {
   position: relative;
   display: flex;
@@ -553,7 +549,7 @@ padding-right: 1rem;
 }
 
 
-/*Durata*/
+
 .durataGrid{
   margin-top: 2rem;
 }
@@ -562,7 +558,6 @@ padding-right: 1rem;
   width: 50%;
 }
 
-/*Provider*/
 .gridProvider{
   display: grid;
   grid-template-columns: repeat(5, 1fr);
@@ -583,7 +578,7 @@ padding-right: 1rem;
 }
 
 .gridProvider::-webkit-scrollbar-thumb {
-  background: #ffffff; /* Color of the scroll thumb */
+  background: #ffffff; 
 }
 
 .checkbox-img {
